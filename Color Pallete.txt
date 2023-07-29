@@ -1,0 +1,5 @@
+Primary - #272829
+Secondary - #61677A
+Background - #D8D9DA
+Whitespace - #FFF6E0
+Font - Highlight

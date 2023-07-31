@@ -18,11 +18,13 @@ namespace TestingPhase
             InitializeComponent();
         }
 
+        //closing the form
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        //Login button and checking if the user is existing or not
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtUsername.Text) || String.IsNullOrEmpty(txtPassword.Text))
@@ -53,6 +55,7 @@ namespace TestingPhase
             }
         }
 
+        //This funciton was to get information if the user and pass is valid and return it as a table
         private DataTable GetInfo(string connectionString)
         {
             DataTable dataTable = new DataTable();

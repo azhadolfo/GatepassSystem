@@ -19,6 +19,8 @@ namespace TestingPhase
         {
             InitializeComponent();
         }
+
+        //this is the function for Getting Data in sql server
         private void GetData()
         {
             dataGridView1.Rows.Clear();
@@ -52,12 +54,13 @@ namespace TestingPhase
             }
             }
         }
-
+        //this is the process once the user click the Read button
         private void btnRead_Click(object sender, EventArgs e)
         {
            GetData();
         }
 
+        //this is the process once the form is done loading
         private void frmMain_Load(object sender, EventArgs e)
         {
             //// Fetch data from the database and fill a DataTable
@@ -108,6 +111,7 @@ namespace TestingPhase
         //    return dataTable;
         //}
 
+        //this is the process once the user click the Add button
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtFirstName.Text) || string.IsNullOrEmpty(txtLastName.Text))
@@ -163,6 +167,7 @@ namespace TestingPhase
         //    return dataTable;
         //}
 
+        //this is the function for Adding the data inside the database
         private void AddData()
         {
            
@@ -190,6 +195,7 @@ namespace TestingPhase
             }
         }
 
+        //this is the function for selecting a row and display the data in textbox
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in dataGridView1.SelectedRows )
@@ -206,6 +212,7 @@ namespace TestingPhase
             
         }
 
+        //this is the process once the user click the update button
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             UpdateData();
@@ -215,6 +222,7 @@ namespace TestingPhase
             txtLastName.Clear();  
         }
 
+        //this is the function for Updating the data inside the database
         private void UpdateData()
         {
             using (SqlConnection conn = new SqlConnection(rootVariable.ConnectionString))
@@ -241,6 +249,8 @@ namespace TestingPhase
                 }
             }
         }
+
+        //this is the function for Deleting the data inside the database
         private void DeleteData()
         {
             using (SqlConnection conn = new SqlConnection(rootVariable.ConnectionString))
@@ -265,7 +275,7 @@ namespace TestingPhase
             }
         }
 
-
+        //this is the process once the user click the delete button
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
@@ -281,6 +291,7 @@ namespace TestingPhase
             
         }
 
+        //this is the process once the user click the SignOut link label text
         private void lblSignOut_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DialogResult dialog = MessageBox.Show("Are you sure you want to log out?", "System Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

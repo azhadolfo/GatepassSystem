@@ -1,7 +1,5 @@
-Primary - #272829
-Secondary - #61677A
-Background - #D8D9DA
-Whitespace - #FFF6E0
-Font Color - Highlight
-Font - bahnschrift Condensed
-
+Font Color : #e3fbfc
+Background : #031617
+Primary: #119397
+Secondary : #063537
+Accent : #23e0e7

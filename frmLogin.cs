@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace TestingPhase
 {
+    
     public partial class frmLogin : Form
     {
         public frmLogin()
@@ -39,15 +40,25 @@ namespace TestingPhase
             }
             else
             {
-
+               
                 DataTable dataTable = GetInfo(rootVariable.ConnectionString);
                 try
                 {
                     if (dataTable.Rows.Count > 0)
                     {
-                        frmMain MainForm = new frmMain();
-                        this.Hide();
-                        MainForm.ShowDialog();
+                        rootv.isadmin = (bool)dataTable.Rows[0]["isadmin"];
+
+                        if (rootv.isadmin == true)
+                        {
+                            frmMain MainForm = new frmMain();
+                            this.Hide();
+                            MainForm.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("You're not an admin.");
+                        }
+                        
                     }
                     else
                     {

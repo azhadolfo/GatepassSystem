@@ -16,4 +16,11 @@ namespace TestingPhase
        //public static string CONNECTION_STR {  get; set; } = "Data Source=WIN-IU3ACLEQUUI;Initial Catalog=cs_crud;Persist Security Info=True;User ID=user3;Password=twainc.";
 
     }
+
+    class rootv
+    {
+        public static bool isadmin { get; set; } = false;
+
+
+    }
 }

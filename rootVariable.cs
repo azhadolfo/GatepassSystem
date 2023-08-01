@@ -9,9 +9,11 @@ namespace TestingPhase
 {
     internal class rootVariable
     {
-        public static string ConnectionString = "Data Source=WIN-IU3ACLEQUUI;Initial Catalog=cs_crud;Persist Security Info=True;User ID=user3;Password=twainc.";
+        public static string ConnectionString { get; set; } = "Data Source=WIN-IU3ACLEQUUI;Initial Catalog=cs_crud;Persist Security Info=True;User ID=user3;Password=twainc.";
 
-        public static SqlConnection SqlConnection = new SqlConnection(ConnectionString);
+        public static SqlConnection SqlConnection { get; set; } = new SqlConnection(ConnectionString);
+
+       //public static string CONNECTION_STR {  get; set; } = "Data Source=WIN-IU3ACLEQUUI;Initial Catalog=cs_crud;Persist Security Info=True;User ID=user3;Password=twainc.";
 
     }
 }

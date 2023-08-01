@@ -21,6 +21,7 @@ namespace TestingPhase
         }
 
         //this is the function for Getting Data in sql server
+        #region -- Get Data Function --
         private void GetData()
         {
             dataGridView1.Rows.Clear();
@@ -54,6 +55,95 @@ namespace TestingPhase
             }
             }
         }
+        #endregion
+
+        //this is the function for Updating the data inside the database
+        #region -- Update Data Function --
+        private void UpdateData()
+        {
+            using (SqlConnection conn = new SqlConnection(rootVariable.ConnectionString))
+            {
+                string query = "UPDATE tblemployee SET first_name = @fname, last_name = @lname WHERE id = @id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("id", txtId.Text);
+                cmd.Parameters.AddWithValue("fname", txtFirstName.Text);
+                cmd.Parameters.AddWithValue("lname", txtLastName.Text);
+
+                try
+                {
+                    conn.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Successfully Updated");
+                    }
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("There's an error in your connection");
+                }
+            }
+        }
+        #endregion
+
+        //this is the function for Deleting the data inside the database
+        #region -- Delete Data Function --
+        private void DeleteData()
+        {
+            using (SqlConnection conn = new SqlConnection(rootVariable.ConnectionString))
+            {
+                string query = "DELETE FROM tblemployee WHERE id = @id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("id", txtId.Text);
+
+
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Successfully Deleted");
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("There's an error in your connection");
+                }
+            }
+        }
+        #endregion
+
+        //this is the function for Adding the data inside the database
+        #region -- Add Data Function --
+        private void AddData()
+        {
+
+            using (SqlConnection conn = new SqlConnection(rootVariable.ConnectionString))
+            {
+                string query = "INSERT INTO tblemployee (first_name,last_name) VALUES (@fname, @lname)";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("fname", txtFirstName.Text);
+                cmd.Parameters.AddWithValue("lname", txtLastName.Text);
+
+                try
+                {
+                    conn.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Successfully Added");
+                    }
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("There's an error in your connection");
+                }
+            }
+        }
+        #endregion
+
         //this is the process once the user click the Read button
         private void btnRead_Click(object sender, EventArgs e)
         {
@@ -167,33 +257,6 @@ namespace TestingPhase
         //    return dataTable;
         //}
 
-        //this is the function for Adding the data inside the database
-        private void AddData()
-        {
-           
-            using (SqlConnection conn = new SqlConnection(rootVariable.ConnectionString))
-            {
-                string query = "INSERT INTO tblemployee (first_name,last_name) VALUES (@fname, @lname)";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("fname", txtFirstName.Text);
-                cmd.Parameters.AddWithValue("lname", txtLastName.Text);
-
-                try
-                {
-                    conn.Open();
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    if (rowsAffected > 0)
-                    {
-                         MessageBox.Show("Successfully Added");
-                    }            
-                }
-                catch (Exception)
-                {
-
-                    MessageBox.Show("There's an error in your connection");
-                }
-            }
-        }
 
         //this is the function for selecting a row and display the data in textbox
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -222,59 +285,7 @@ namespace TestingPhase
             txtLastName.Clear();  
         }
 
-        //this is the function for Updating the data inside the database
-        private void UpdateData()
-        {
-            using (SqlConnection conn = new SqlConnection(rootVariable.ConnectionString))
-            {
-                string query = "UPDATE tblemployee SET first_name = @fname, last_name = @lname WHERE id = @id";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("id", txtId.Text);
-                cmd.Parameters.AddWithValue("fname", txtFirstName.Text);
-                cmd.Parameters.AddWithValue("lname", txtLastName.Text);
-
-                try
-                {
-                    conn.Open();
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Successfully Updated");
-                    }
-                }
-                catch (Exception)
-                {
-
-                    MessageBox.Show("There's an error in your connection");
-                }
-            }
-        }
-
-        //this is the function for Deleting the data inside the database
-        private void DeleteData()
-        {
-            using (SqlConnection conn = new SqlConnection(rootVariable.ConnectionString))
-            {
-                string query = "DELETE FROM tblemployee WHERE id = @id";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("id", txtId.Text);
-
-
-                try
-                {
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Successfully Deleted");
-                }
-                catch (Exception)
-                {
-
-                    MessageBox.Show("There's an error in your connection");
-                }
-            }
-        }
-
+       
         //this is the process once the user click the delete button
         private void btnDelete_Click(object sender, EventArgs e)
         {

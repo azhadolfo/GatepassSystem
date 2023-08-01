@@ -39,14 +39,6 @@ namespace TestingPhase
             }
             else
             {
-                //if (lblWrong.Visible == true)
-                //{
-                //    lblWrong.Visible = false;
-                //}
-                //if (lblEmpty.Visible == true)
-                //{
-                //    lblEmpty.Visible = false;
-                //}
 
                 DataTable dataTable = GetInfo(rootVariable.ConnectionString);
                 try

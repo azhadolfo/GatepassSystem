@@ -48,18 +48,18 @@ namespace TestingPhase
                 {
                     if (dataTable.Rows.Count > 0)
                     {
-                        rootv.isadmin = (bool)dataTable.Rows[0]["isadmin"];
+                        String role = dataTable.Rows[0]["role"].ToString();
 
-                        if (rootv.isadmin == true)
-                        {
-                            frmMain MainForm = new frmMain();
+                        //if (rootv.isadmin == true)
+                        //{
+                            frmDashboard dashboard = new frmDashboard(role);
                             this.Hide();
-                            MainForm.ShowDialog();
-                        }
-                        else
-                        {
-                            MessageBox.Show("You're not an admin.");
-                        }
+                            dashboard.ShowDialog();
+                        //}
+                        //else
+                        //{
+                        //    MessageBox.Show("You're not an admin.");
+                        //}
                         
                     }
                     else

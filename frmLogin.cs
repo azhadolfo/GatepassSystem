@@ -14,6 +14,8 @@ namespace TestingPhase
     
     public partial class frmLogin : Form
     {
+        rootv rootv = new rootv();
+        string query;
         public frmLogin()
         {
             InitializeComponent();
@@ -22,7 +24,7 @@ namespace TestingPhase
         //closing the form
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         //Login button and checking if the user is existing or not

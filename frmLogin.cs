@@ -29,10 +29,24 @@ namespace TestingPhase
         {
             if (String.IsNullOrEmpty(txtUsername.Text) || String.IsNullOrEmpty(txtPassword.Text))
             {
-                MessageBox.Show("Please input your username or password.", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Please input your username or password.", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (lblWrong.Visible == true)
+                {
+                    lblWrong.Visible = false;
+                }
+                lblEmpty.Visible = true;
+                
             }
             else
             {
+                //if (lblWrong.Visible == true)
+                //{
+                //    lblWrong.Visible = false;
+                //}
+                //if (lblEmpty.Visible == true)
+                //{
+                //    lblEmpty.Visible = false;
+                //}
 
                 DataTable dataTable = GetInfo(rootVariable.ConnectionString);
                 try
@@ -45,7 +59,12 @@ namespace TestingPhase
                     }
                     else
                     {
-                        MessageBox.Show("Wrong username or password", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //MessageBox.Show("Wrong username or password", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Error);                       
+                        if (lblEmpty.Visible == true)
+                        {
+                            lblEmpty.Visible = false;
+                        }
+                        lblWrong.Visible = true;
                     }
                 }
                 catch (Exception ex)
@@ -90,6 +109,20 @@ namespace TestingPhase
 
 
             return dataTable;
+        }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            btnShow.Visible = false;
+            btnHide.Visible = true;
+            txtPassword.UseSystemPasswordChar = false;
+        }
+
+        private void btnHide_Click(object sender, EventArgs e)
+        {
+            btnShow.Visible = true;
+            btnHide.Visible = false;
+            txtPassword.UseSystemPasswordChar = true;
         }
     }
 }

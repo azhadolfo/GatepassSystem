@@ -34,16 +34,22 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnShow = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnHide = new System.Windows.Forms.PictureBox();
+            this.lblEmpty = new System.Windows.Forms.Label();
+            this.lblWrong = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHide)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,6 +105,10 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lblWrong);
+            this.panel3.Controls.Add(this.lblEmpty);
+            this.panel3.Controls.Add(this.btnHide);
+            this.panel3.Controls.Add(this.btnShow);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.txtPassword);
@@ -107,6 +117,18 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(460, 98);
             this.panel3.TabIndex = 1;
+            // 
+            // btnShow
+            // 
+            this.btnShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
+            this.btnShow.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnShow.BackgroundImage")));
+            this.btnShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnShow.Location = new System.Drawing.Point(402, 52);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(38, 25);
+            this.btnShow.TabIndex = 5;
+            this.btnShow.TabStop = false;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // pictureBox2
             // 
@@ -159,6 +181,43 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Login to your account";
             // 
+            // btnHide
+            // 
+            this.btnHide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
+            this.btnHide.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHide.BackgroundImage")));
+            this.btnHide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHide.Location = new System.Drawing.Point(402, 52);
+            this.btnHide.Name = "btnHide";
+            this.btnHide.Size = new System.Drawing.Size(38, 25);
+            this.btnHide.TabIndex = 6;
+            this.btnHide.TabStop = false;
+            this.btnHide.Visible = false;
+            this.btnHide.Click += new System.EventHandler(this.btnHide_Click);
+            // 
+            // lblEmpty
+            // 
+            this.lblEmpty.AutoSize = true;
+            this.lblEmpty.Font = new System.Drawing.Font("Bahnschrift Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpty.ForeColor = System.Drawing.Color.Red;
+            this.lblEmpty.Location = new System.Drawing.Point(56, -3);
+            this.lblEmpty.Name = "lblEmpty";
+            this.lblEmpty.Size = new System.Drawing.Size(174, 14);
+            this.lblEmpty.TabIndex = 7;
+            this.lblEmpty.Text = "Please input your username or password!";
+            this.lblEmpty.Visible = false;
+            // 
+            // lblWrong
+            // 
+            this.lblWrong.AutoSize = true;
+            this.lblWrong.Font = new System.Drawing.Font("Bahnschrift Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWrong.ForeColor = System.Drawing.Color.Red;
+            this.lblWrong.Location = new System.Drawing.Point(56, -3);
+            this.lblWrong.Name = "lblWrong";
+            this.lblWrong.Size = new System.Drawing.Size(130, 14);
+            this.lblWrong.TabIndex = 8;
+            this.lblWrong.Text = "Wrong username or password!";
+            this.lblWrong.Visible = false;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,8 +236,10 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnShow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHide)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -195,6 +256,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.PictureBox btnShow;
+        private System.Windows.Forms.PictureBox btnHide;
+        private System.Windows.Forms.Label lblEmpty;
+        private System.Windows.Forms.Label lblWrong;
     }
 }
 

@@ -14,8 +14,8 @@ namespace TestingPhase
     
     public partial class frmLogin : Form
     {
-        rootv rootv = new rootv();
-        string query;
+        //rootv rootv = new rootv();
+        //string query;
         public frmLogin()
         {
             InitializeComponent();
@@ -43,16 +43,17 @@ namespace TestingPhase
             else
             {
                
-                DataTable dataTable = GetInfo(rootVariable.ConnectionString);
+                DataTable dataTable = GetInfo(rootv.ConnectionString);
                 try
                 {
                     if (dataTable.Rows.Count > 0)
                     {
-                        String role = dataTable.Rows[0]["role"].ToString();
+                        rootv.isadmin = Convert.ToBoolean(dataTable.Rows[0]["isadmin"].ToString());
+                        var fname = dataTable.Rows[0]["first_name"].ToString();
 
                         //if (rootv.isadmin == true)
                         //{
-                            frmDashboard dashboard = new frmDashboard(role);
+                            frmDashboard dashboard = new frmDashboard(fname);
                             this.Hide();
                             dashboard.ShowDialog();
                         //}

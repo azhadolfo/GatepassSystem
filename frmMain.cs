@@ -22,12 +22,12 @@ namespace TestingPhase
 
         //this is the function for Getting Data in sql server
         #region -- Get Data Function --
-        private void GetData()
+        public void GetData()
         {
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
             string query = "SELECT * FROM tblemployee";
-            using (SqlConnection conn = new SqlConnection(rootVariable.ConnectionString))
+            using (SqlConnection conn = new SqlConnection(rootv.ConnectionString))
             { 
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataReader rdr;
@@ -61,7 +61,7 @@ namespace TestingPhase
         #region -- Update Data Function --
         private void UpdateData()
         {
-            using (SqlConnection conn = new SqlConnection(rootVariable.ConnectionString))
+            using (SqlConnection conn = new SqlConnection(rootv.ConnectionString))
             {
                 string query = "UPDATE tblemployee SET first_name = @fname, last_name = @lname WHERE id = @id";
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -91,7 +91,7 @@ namespace TestingPhase
         #region -- Delete Data Function --
         private void DeleteData()
         {
-            using (SqlConnection conn = new SqlConnection(rootVariable.ConnectionString))
+            using (SqlConnection conn = new SqlConnection(rootv.ConnectionString))
             {
                 string query = "DELETE FROM tblemployee WHERE id = @id";
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -119,7 +119,7 @@ namespace TestingPhase
         private void AddData()
         {
 
-            using (SqlConnection conn = new SqlConnection(rootVariable.ConnectionString))
+            using (SqlConnection conn = new SqlConnection(rootv.ConnectionString))
             {
                 string query = "INSERT INTO tblemployee (first_name,last_name) VALUES (@fname, @lname)";
                 SqlCommand cmd = new SqlCommand(query, conn);

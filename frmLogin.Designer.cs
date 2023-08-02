@@ -113,19 +113,19 @@
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.txtPassword);
             this.panel3.Controls.Add(this.txtUsername);
-            this.panel3.Location = new System.Drawing.Point(14, 173);
+            this.panel3.Location = new System.Drawing.Point(14, 153);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(460, 98);
+            this.panel3.Size = new System.Drawing.Size(460, 118);
             this.panel3.TabIndex = 1;
             // 
             // lblWrong
             // 
             this.lblWrong.AutoSize = true;
-            this.lblWrong.Font = new System.Drawing.Font("Bahnschrift Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWrong.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWrong.ForeColor = System.Drawing.Color.Red;
-            this.lblWrong.Location = new System.Drawing.Point(56, -3);
+            this.lblWrong.Location = new System.Drawing.Point(55, 11);
             this.lblWrong.Name = "lblWrong";
-            this.lblWrong.Size = new System.Drawing.Size(130, 14);
+            this.lblWrong.Size = new System.Drawing.Size(170, 19);
             this.lblWrong.TabIndex = 8;
             this.lblWrong.Text = "Wrong username or password!";
             this.lblWrong.Visible = false;
@@ -133,11 +133,11 @@
             // lblEmpty
             // 
             this.lblEmpty.AutoSize = true;
-            this.lblEmpty.Font = new System.Drawing.Font("Bahnschrift Condensed", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpty.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmpty.ForeColor = System.Drawing.Color.Red;
-            this.lblEmpty.Location = new System.Drawing.Point(56, -3);
+            this.lblEmpty.Location = new System.Drawing.Point(55, 11);
             this.lblEmpty.Name = "lblEmpty";
-            this.lblEmpty.Size = new System.Drawing.Size(174, 14);
+            this.lblEmpty.Size = new System.Drawing.Size(230, 19);
             this.lblEmpty.TabIndex = 7;
             this.lblEmpty.Text = "Please input your username or password!";
             this.lblEmpty.Visible = false;
@@ -147,7 +147,7 @@
             this.btnHide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.btnHide.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHide.BackgroundImage")));
             this.btnHide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnHide.Location = new System.Drawing.Point(402, 52);
+            this.btnHide.Location = new System.Drawing.Point(402, 71);
             this.btnHide.Name = "btnHide";
             this.btnHide.Size = new System.Drawing.Size(38, 25);
             this.btnHide.TabIndex = 6;
@@ -160,7 +160,7 @@
             this.btnShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.btnShow.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnShow.BackgroundImage")));
             this.btnShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnShow.Location = new System.Drawing.Point(402, 52);
+            this.btnShow.Location = new System.Drawing.Point(402, 71);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(38, 25);
             this.btnShow.TabIndex = 5;
@@ -171,7 +171,7 @@
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(15, 51);
+            this.pictureBox2.Location = new System.Drawing.Point(15, 70);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(38, 26);
             this.pictureBox2.TabIndex = 4;
@@ -181,7 +181,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 14);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 33);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(38, 26);
             this.pictureBox1.TabIndex = 3;
@@ -191,7 +191,7 @@
             // 
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.txtPassword.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(59, 51);
+            this.txtPassword.Location = new System.Drawing.Point(59, 70);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(381, 27);
             this.txtPassword.TabIndex = 2;
@@ -201,7 +201,7 @@
             // 
             this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.txtUsername.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(59, 14);
+            this.txtUsername.Location = new System.Drawing.Point(59, 33);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(381, 27);
             this.txtUsername.TabIndex = 1;

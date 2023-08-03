@@ -55,7 +55,7 @@ namespace TestingPhase
                         //{
                             frmDashboard dashboard = new frmDashboard(fname);
                             this.Hide();
-                            dashboard.ShowDialog();
+                            dashboard.Show();
                         //}
                         //else
                         //{

@@ -24,11 +24,11 @@ namespace TestingPhase
 
         private void msgOK_Load(object sender, EventArgs e)
         {
-            if(rootv.isupdate == true)
+            if(rootv.isupdate)
             {
                 lblMessage.Text = "Successfully Updated";
             }
-            if(rootv.isadd == true)
+            if(rootv.isadd)
             {
                 lblMessage.Text = "Successfully Added";
             } 

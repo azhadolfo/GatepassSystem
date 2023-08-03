@@ -129,6 +129,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(263, 36);
             this.txtUsername.TabIndex = 16;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // btnUpdate
             // 

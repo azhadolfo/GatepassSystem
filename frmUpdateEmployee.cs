@@ -125,20 +125,26 @@ namespace TestingPhase
 
             try
             {
-                if (!(String.IsNullOrEmpty(txtUsername.Text) && String.IsNullOrEmpty(txtFirstname.Text ) && String.IsNullOrEmpty(txtLastname.Text)))
+                var username = txtUsername.Text;
+                var fname = txtFirstname.Text;
+                var lname = txtLastname.Text;
+
+                if (employeeAvailable)
                 {
-                    var username = txtUsername.Text;
-                    var fname = txtFirstname.Text;
-                    var lname = txtLastname.Text;
-
-                    root.UpdateData(username, fname, lname);
-
-                    
+                    if (!(String.IsNullOrEmpty(txtUsername.Text) && String.IsNullOrEmpty(txtFirstname.Text) && String.IsNullOrEmpty(txtLastname.Text)))
+                    {
+                        root.UpdateData(username, fname, lname);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Fill input all the fields needed!", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Fill input all the fields needed!", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("This user is not found!", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+                
             }
             catch (Exception)
             {
@@ -156,5 +162,9 @@ namespace TestingPhase
             txtLastname.Text = string.Empty;
         }
 
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+            ClearFields();
+        }
     }
 }

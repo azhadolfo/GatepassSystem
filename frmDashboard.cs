@@ -39,7 +39,7 @@ namespace TestingPhase
 
         private void frmDashboard_Load(object sender, EventArgs e)
         {
-            if (rootv.isadmin == true)
+            if (rootv.isadmin)
             {
                 lblWelcome.Text = "Welcome Admin";
                

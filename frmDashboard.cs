@@ -89,5 +89,18 @@ namespace TestingPhase
                 updateEmployee.Show();
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<frmDeleteEmployee>().Count() == 1)
+            {
+                Application.OpenForms.OfType<frmDeleteEmployee>().First().BringToFront();
+            }
+            else
+            {
+                frmDeleteEmployee deleteEmployee = new frmDeleteEmployee();
+                deleteEmployee.Show();
+            }
+        }
     }
 }

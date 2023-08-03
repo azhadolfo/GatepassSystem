@@ -34,7 +34,7 @@
             this.btnViewEmployee = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAddEmployee = new System.Windows.Forms.ToolStripMenuItem();
             this.btnUpdate = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.generatePassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.validatePassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLogout = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +63,7 @@
             this.btnViewEmployee,
             this.btnAddEmployee,
             this.btnUpdate,
-            this.deleteEmployeeToolStripMenuItem});
+            this.btnDelete});
             this.btnEmployees.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
             this.btnEmployees.Image = ((System.Drawing.Image)(resources.GetObject("btnEmployees.Image")));
             this.btnEmployees.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -101,14 +101,15 @@
             this.btnUpdate.Text = "Update Employee";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // deleteEmployeeToolStripMenuItem
+            // btnDelete
             // 
-            this.deleteEmployeeToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
-            this.deleteEmployeeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deleteEmployeeToolStripMenuItem.Image")));
-            this.deleteEmployeeToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.deleteEmployeeToolStripMenuItem.Name = "deleteEmployeeToolStripMenuItem";
-            this.deleteEmployeeToolStripMenuItem.Size = new System.Drawing.Size(238, 38);
-            this.deleteEmployeeToolStripMenuItem.Text = "Delete Employee";
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(238, 38);
+            this.btnDelete.Text = "Delete Employee";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // generatePassToolStripMenuItem
             // 
@@ -184,7 +185,7 @@
         private System.Windows.Forms.ToolStripMenuItem validatePassToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnLogout;
         private System.Windows.Forms.ToolStripMenuItem btnUpdate;
-        private System.Windows.Forms.ToolStripMenuItem deleteEmployeeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnDelete;
         private System.Windows.Forms.Label lblWelcome;
     }
 }

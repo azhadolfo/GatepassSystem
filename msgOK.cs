@@ -31,7 +31,11 @@ namespace TestingPhase
             if(rootv.isadd)
             {
                 lblMessage.Text = "Successfully Added";
-            } 
+            }
+            if (rootv.isdelete)
+            {
+                lblMessage.Text = "Successfully Deleted";
+            }
         }
     }
 }

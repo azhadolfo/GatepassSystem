@@ -37,6 +37,7 @@ namespace TestingPhase
 
         public static bool isupdate { get; set; }
         public static bool isadd { get; set; }
+        public static bool isdelete { get; set; }
 
         public DataSet GetData(string query)
         {
@@ -115,6 +116,10 @@ namespace TestingPhase
 
                     MessageBox.Show("There's an error in your connection", ex.Message);
                 }
+                finally
+                {
+                    isadd = false;
+                }
             }
         }
         #endregion
@@ -163,6 +168,10 @@ namespace TestingPhase
 
                     MessageBox.Show("There's an error in your connection");
                 }
+                finally
+                {
+                    isupdate = false;
+                }
             }
         }
         #endregion
@@ -194,6 +203,36 @@ namespace TestingPhase
         }
         #endregion
 
+        //this is the function for Deleting the data inside the database
+        #region -- Delete Data Function --
+        public void DeleteData(int id)
+        {
+            using (SqlConnection conn = new SqlConnection(rootv.ConnectionString))
+            {
+                string query = "DELETE FROM tblemployee WHERE id = @id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("id", id);
 
+
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+
+                    isdelete = true;
+                    msgOK.ShowDialog();
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("There's an error in your connection");
+                }
+                finally
+                {
+                    isdelete = false;
+                }
+            }
+        }
+        #endregion
     }
 }

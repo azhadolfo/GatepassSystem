@@ -20,6 +20,8 @@ namespace TestingPhase
 
     class rootv
     {
+        msgOK msgOK = new msgOK();
+
         public static string ConnectionString { get; set; } = "Data Source=WIN-IU3ACLEQUUI;Initial Catalog=cs_crud;Persist Security Info=True;User ID=user3;Password=twainc.";
 
         public static SqlConnection SqlConnection { get; set; } = new SqlConnection(ConnectionString);
@@ -32,6 +34,9 @@ namespace TestingPhase
         }
 
         public static bool isadmin { get; set; } = false;
+
+        public static bool isupdate { get; set; }
+        public static bool isadd { get; set; }
 
         public DataSet GetData(string query)
         {
@@ -51,7 +56,7 @@ namespace TestingPhase
                 // Log the error or handle it appropriately.
                 // Here, I am just re-throwing the exception to propagate it to the caller.
                 // You can handle the exception according to your application's requirements.
-                throw;
+                Console.WriteLine("Error:", ex.Message);
             }
             return ds;
         }
@@ -101,13 +106,14 @@ namespace TestingPhase
                     int rowsAffected = cmd.ExecuteNonQuery();
                     if (rowsAffected > 0)
                     {
-                        MessageBox.Show("Successfully Added");
+                        isadd = true;
+                        msgOK.ShowDialog();
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
 
-                    MessageBox.Show("There's an error in your connection");
+                    MessageBox.Show("There's an error in your connection", ex.Message);
                 }
             }
         }
@@ -130,5 +136,62 @@ namespace TestingPhase
             return prefix + nano;
         }
 
+        //this is the function for Updating the data inside the database
+        #region -- Update Data Function --
+        public void UpdateData(string username, string fname, string lname)
+        {
+            using (SqlConnection conn = new SqlConnection(rootv.ConnectionString))
+            {
+                string query = "UPDATE tblemployee SET first_name = @fname, last_name = @lname WHERE username = @username";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("username", username);
+                cmd.Parameters.AddWithValue("fname", fname);
+                cmd.Parameters.AddWithValue("lname", lname);
+
+                try
+                {
+                    conn.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        isupdate = true;
+                        msgOK.ShowDialog();
+                    }
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("There's an error in your connection");
+                }
+            }
+        }
+        #endregion
+
+        //this is the function for Getting Data in sql server
+        #region -- Get Data Function --
+        public DataTable GetDataByUsername(string username)
+        {
+            DataTable dt = new DataTable();
+            string query = "SELECT * FROM tblemployee WHERE username = @username";
+            using (SqlConnection conn = new SqlConnection(rootv.ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@username", username);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                try
+                {
+                    conn.Open();
+                    da.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("There's an error in your connection: " + ex.Message);
+                }
+            }
+
+            return dt;
+        }
+        #endregion
     }
 }

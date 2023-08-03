@@ -18,6 +18,8 @@ namespace TestingPhase
         rootv root = new rootv();
         string query;
         DataSet ds;
+        DataTable dt;
+     
         
         public frmAddEmployee()
         {
@@ -26,12 +28,13 @@ namespace TestingPhase
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+          rootv.isupdate = false;
             try
             {
-                var fname = txtFirstname.Text;
-                var lname = txtLastname.Text;
-                var username = txtUsername.Text;
-                var password = txtPassword.Text;
+                var fname = txtFirstname.Text.Trim();
+                var lname = txtLastname.Text.Trim();
+                var username = txtUsername.Text.Trim();
+                var password = txtPassword.Text.Trim();
 
 
                 if(!String.IsNullOrEmpty(fname)&&
@@ -39,10 +42,11 @@ namespace TestingPhase
                    !String.IsNullOrEmpty(username)&&
                    !String.IsNullOrEmpty(password))
                 {
-                    query = $"SELECT * FROM tblemployee WHERE username = {username}";     
-                    ds = root.GetData(query);
-                    if ( ds != null && ds.Tables[0].Rows.Count == 0 )
+                    dt = root.GetDataByUsername(username);
+
+                    if (dt != null && dt.Rows.Count == 0)
                     {
+                        
                         root.AddData(fname,lname,username,password);
                         ClearFields();
                     

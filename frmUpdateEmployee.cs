@@ -150,7 +150,10 @@ namespace TestingPhase
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            this.Refresh();
+
+            txtUsername.Text = string.Empty;
+            txtFirstname.Text = string.Empty;
+            txtLastname.Text = string.Empty;
         }
 
     }

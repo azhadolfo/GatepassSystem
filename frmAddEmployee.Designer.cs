@@ -115,37 +115,41 @@
             // txtFirstname
             // 
             this.txtFirstname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
+            this.txtFirstname.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.txtFirstname.Location = new System.Drawing.Point(357, 121);
+            this.txtFirstname.Location = new System.Drawing.Point(355, 115);
             this.txtFirstname.Name = "txtFirstname";
-            this.txtFirstname.Size = new System.Drawing.Size(435, 27);
+            this.txtFirstname.Size = new System.Drawing.Size(435, 36);
             this.txtFirstname.TabIndex = 6;
             // 
             // txtLastname
             // 
             this.txtLastname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
+            this.txtLastname.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.txtLastname.Location = new System.Drawing.Point(357, 194);
+            this.txtLastname.Location = new System.Drawing.Point(355, 188);
             this.txtLastname.Name = "txtLastname";
-            this.txtLastname.Size = new System.Drawing.Size(435, 27);
+            this.txtLastname.Size = new System.Drawing.Size(435, 36);
             this.txtLastname.TabIndex = 7;
             // 
             // txtUsername
             // 
             this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
+            this.txtUsername.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.txtUsername.Location = new System.Drawing.Point(357, 267);
+            this.txtUsername.Location = new System.Drawing.Point(355, 261);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(435, 27);
+            this.txtUsername.Size = new System.Drawing.Size(435, 36);
             this.txtUsername.TabIndex = 8;
             // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
+            this.txtPassword.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.txtPassword.Location = new System.Drawing.Point(356, 340);
+            this.txtPassword.Location = new System.Drawing.Point(354, 334);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(435, 27);
+            this.txtPassword.Size = new System.Drawing.Size(435, 36);
             this.txtPassword.TabIndex = 9;
             this.txtPassword.UseSystemPasswordChar = true;
             // 

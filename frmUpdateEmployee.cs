@@ -18,6 +18,7 @@ namespace TestingPhase
         DataSet ds;
         DataTable dt;
         bool employeeAvailable;
+        bool hasChange;
 
         public frmUpdateEmployee()
         {
@@ -58,6 +59,7 @@ namespace TestingPhase
 
                 if (dt != null && dt.Rows.Count > 0)
                 {
+                    hasChange = false;
                     employeeAvailable = true;
                     txtFirstname.Text = dt.Rows[0]["first_name"].ToString().Trim();
                     txtLastname.Text = dt.Rows[0]["last_name"].ToString().Trim();
@@ -125,25 +127,34 @@ namespace TestingPhase
 
             try
             {
-                var username = txtUsername.Text;
-                var fname = txtFirstname.Text;
-                var lname = txtLastname.Text;
-
-                if (employeeAvailable)
+                if (hasChange)
                 {
-                    if (!(String.IsNullOrEmpty(txtUsername.Text) && String.IsNullOrEmpty(txtFirstname.Text) && String.IsNullOrEmpty(txtLastname.Text)))
+                    var username = txtUsername.Text;
+                    var fname = txtFirstname.Text;
+                    var lname = txtLastname.Text;
+
+                    if (employeeAvailable)
                     {
-                        root.UpdateData(username, fname, lname);
+                        if (!(String.IsNullOrEmpty(txtUsername.Text) && String.IsNullOrEmpty(txtFirstname.Text) && String.IsNullOrEmpty(txtLastname.Text)))
+                        {
+                            root.UpdateData(username, fname, lname);
+                            hasChange = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fill input all the fields needed!", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Fill input all the fields needed!", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("This user is not found!", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("This user is not found!", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("No changes were made.", "Update Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+               
                 
             }
             catch (Exception)
@@ -165,6 +176,18 @@ namespace TestingPhase
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
             ClearFields();
+        }
+
+        private void txtFirstname_TextChanged(object sender, EventArgs e)
+        {
+            if (!hasChange)
+                hasChange = true;
+        }
+
+        private void txtLastname_TextChanged(object sender, EventArgs e)
+        {
+            if (!hasChange)
+                hasChange = true;
         }
     }
 }

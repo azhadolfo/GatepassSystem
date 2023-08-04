@@ -31,11 +31,16 @@ namespace TestingPhase
             if (dialog == DialogResult.Yes)
             {
 
-                this.Close();
+                // Show the login form
                 frmLogin frmLogin = new frmLogin();
                 frmLogin.Show();
+
+                // Hide the current form
+                this.Close();
             }
         }
+
+
 
         private void frmDashboard_Load(object sender, EventArgs e)
         {
@@ -53,9 +58,12 @@ namespace TestingPhase
 
         private void btnViewEmployee_Click(object sender, EventArgs e)
         {
+
             if (Application.OpenForms.OfType<frmViewEmployee>().Count() == 1)
             {
-                Application.OpenForms.OfType<frmViewEmployee>().First().BringToFront();
+                Application.OpenForms.OfType<frmViewEmployee>().First().Close();
+                frmViewEmployee viewEmployee = new frmViewEmployee();
+                viewEmployee.Show();
             }
             else
             {
@@ -68,7 +76,9 @@ namespace TestingPhase
         {
             if (Application.OpenForms.OfType<frmAddEmployee>().Count() == 1)
             {
-                Application.OpenForms.OfType<frmAddEmployee>().First().BringToFront();
+                Application.OpenForms.OfType<frmAddEmployee>().First().Close();
+                frmAddEmployee addEmployee = new frmAddEmployee();
+                addEmployee.Show();
             }
             else
             {
@@ -81,7 +91,9 @@ namespace TestingPhase
         {
             if (Application.OpenForms.OfType<frmUpdateEmployee>().Count() == 1)
             {
-                Application.OpenForms.OfType<frmUpdateEmployee>().First().BringToFront();
+                Application.OpenForms.OfType<frmUpdateEmployee>().First().Close();
+                frmUpdateEmployee updateEmployee = new frmUpdateEmployee();
+                updateEmployee.Show();
             }
             else
             {
@@ -94,13 +106,33 @@ namespace TestingPhase
         {
             if (Application.OpenForms.OfType<frmDeleteEmployee>().Count() == 1)
             {
-                Application.OpenForms.OfType<frmDeleteEmployee>().First().BringToFront();
+                Application.OpenForms.OfType<frmDeleteEmployee>().First().Close();
+                frmDeleteEmployee deleteEmployee = new frmDeleteEmployee();
+                deleteEmployee.Show();
             }
             else
             {
                 frmDeleteEmployee deleteEmployee = new frmDeleteEmployee();
                 deleteEmployee.Show();
             }
+        }
+
+        private void CloseAllForms()
+        {
+            frmViewEmployee viewEmployee = new frmViewEmployee();
+            frmAddEmployee addEmployee = new frmAddEmployee();
+            frmUpdateEmployee updateEmployee = new frmUpdateEmployee();
+            frmDeleteEmployee deleteEmployee = new frmDeleteEmployee();
+
+            viewEmployee.Close();
+            addEmployee.Close();
+            updateEmployee.Close();
+            deleteEmployee.Close();
+        }
+
+        private void frmDashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CloseAllForms();
         }
     }
 }

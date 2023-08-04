@@ -14,10 +14,14 @@ namespace TestingPhase
     public partial class frmDeleteEmployee : Form
     {
         rootv root = new rootv();
+        private int selectedDataCount = 0;
+        msgOK msgOK = new msgOK();
         public frmDeleteEmployee()
         {
             InitializeComponent();
             txtSearch.TextChanged += txtSearch_TextChanged;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
         }
         //this is the function for Getting Data in sql server
@@ -103,35 +107,105 @@ namespace TestingPhase
         {
             GetData();
         }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 4) // Assuming checkbox is in the first column (index 0)
+            {
+                DataGridViewCell cell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+                if (cell is DataGridViewCheckBoxCell checkboxCell)
+                {
+                    if (checkboxCell.Value == checkboxCell.TrueValue)
+                    {
+                        selectedDataCount++;
+                    }
+                    else
+                    {
+                        selectedDataCount--;
+                    }
+                }
+            }
+        }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            // Check if any rows are selected for deletion
-            if (dataGridView1.SelectedRows.Count > 0)
+            //// Check if any rows are selected for deletion
+            //if (selectedDataCount > 0)
+            //{
+            //    // Ask for confirmation from the user
+            //    DialogResult result = MessageBox.Show("Are you sure you want to delete the selected rows?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            //    if (result == DialogResult.Yes)
+            //    {
+            //        List<int> selectedIds = new List<int>();
+
+            //        // Loop through the selected rows and collect the IDs to delete
+            //        foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            //        {
+            //            int id = Convert.ToInt32(row.Cells["table_id"].Value); // Replace "table_id" with the actual name of the primary key column in your database
+            //            selectedIds.Add(id);
+            //        }
+
+            //        // Perform the deletion in the database
+            //        root.DeleteData(selectedIds);
+
+            //        // Remove all the selected rows from the DataGridView
+            //        foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            //        {
+            //            dataGridView1.Rows.Remove(row);
+            //        }
+
+            //        // Reset the selectedDataCount after deletion
+            //        selectedDataCount = 0;
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Please select at least one row to delete.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
+
+            int total = dataGridView1.Rows.Cast<DataGridViewRow>().Count(p => Convert.ToBoolean(p.Cells["Select"].Value) == true);
+
+            if (total > 0)
             {
-                // Ask for confirmation from the user
-                DialogResult result = MessageBox.Show("Are you sure you want to delete the selected rows?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                string message = $"Are you sure you want to delete {total} row?";
+                if (total > 1)
+                    message = $"Are you sure you want to delete {total} rows?";
 
-                if (result == DialogResult.Yes)
+                if (MessageBox.Show(message, "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    // Loop through the selected rows and delete them
-                    foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                    //List<int> idsToDelete = new List<int>();
+                    
+
+                    for (int i = dataGridView1.RowCount - 1; i >= 0; i--)
                     {
-                        int id = Convert.ToInt32(row.Cells["table_id"].Value); // Replace "ID_Column_Name" with the actual name of the primary key column in your database
-
-                        // Perform the deletion in the database
-                        root.DeleteData(id);
-
-                        // Remove the row from the DataGridView
-                        dataGridView1.Rows.Remove(row);
+                        DataGridViewRow row = dataGridView1.Rows[i];
+                        if (Convert.ToBoolean(row.Cells["Select"].Value) == true)
+                        {
+                            int id = Convert.ToInt32(row.Cells["table_id"].Value);
+                           
+                            //idsToDelete.Add(id);
+                            dataGridView1.Rows.Remove(row);
+                            root.DeleteData(id);
+                        }
                     }
+
+                    msgOK.ShowDialog();
+                    rootv.isdelete = false;
+
                 }
             }
             else
             {
                 MessageBox.Show("Please select at least one row to delete.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
         }
+
+      
+
+
+
     }
 
 

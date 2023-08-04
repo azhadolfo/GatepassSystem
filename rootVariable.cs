@@ -96,10 +96,10 @@ namespace TestingPhase
             {
                 string query = "INSERT INTO tblemployee (first_name, last_name, username, password) VALUES (@fname, @lname, @username, @password)";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("fname", fname);
-                cmd.Parameters.AddWithValue("lname", lname);
-                cmd.Parameters.AddWithValue("username", username);
-                cmd.Parameters.AddWithValue("password", password);
+                cmd.Parameters.AddWithValue("@fname", fname);
+                cmd.Parameters.AddWithValue("@lname", lname);
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@password", password);
 
                 try
                 {
@@ -149,9 +149,9 @@ namespace TestingPhase
             {
                 string query = "UPDATE tblemployee SET first_name = @fname, last_name = @lname WHERE username = @username";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("username", username);
-                cmd.Parameters.AddWithValue("fname", fname);
-                cmd.Parameters.AddWithValue("lname", lname);
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@fname", fname);
+                cmd.Parameters.AddWithValue("@lname", lname);
 
                 try
                 {
@@ -211,7 +211,7 @@ namespace TestingPhase
             {
                 string query = "DELETE FROM tblemployee WHERE id = @id";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("id", id);
+                cmd.Parameters.AddWithValue("@id", id);
 
 
                 try
@@ -220,19 +220,53 @@ namespace TestingPhase
                     cmd.ExecuteNonQuery();
 
                     isdelete = true;
-                    msgOK.ShowDialog();
+                    
                 }
                 catch (Exception)
                 {
 
                     MessageBox.Show("There's an error in your connection");
                 }
-                finally
-                {
-                    isdelete = false;
-                }
             }
         }
         #endregion
+
+        //public void DeleteData(List<int> ids)
+        //{
+        //    using (SqlConnection conn = new SqlConnection(rootv.ConnectionString))
+        //    {
+        //        string query = "DELETE FROM tblemployee WHERE id IN (@ids)";
+        //        SqlCommand cmd = new SqlCommand(query, conn);
+
+        //        // Use SqlParameter to pass the list of ids as a parameter
+        //        cmd.Parameters.AddWithValue("@ids", string.Join(",", ids));
+
+        //        try
+        //        {
+        //            conn.Open();
+        //            int rowsAffected = cmd.ExecuteNonQuery();
+
+        //            if (rowsAffected > 0)
+        //            {
+        //                // Deletion successful
+        //                isdelete = true;
+        //                msgOK.ShowDialog();
+        //            }
+        //            else
+        //            {
+        //                // No rows deleted, handle accordingly (e.g., show a message)
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show("Error occurred while deleting data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //        finally
+        //        {
+        //            isdelete = false;
+        //        }
+        //    }
+        //}
+
     }
 }

@@ -123,16 +123,33 @@ namespace TestingPhase
             frmAddEmployee addEmployee = new frmAddEmployee();
             frmUpdateEmployee updateEmployee = new frmUpdateEmployee();
             frmDeleteEmployee deleteEmployee = new frmDeleteEmployee();
+            frmVisitorForm visitorForm = new frmVisitorForm();
 
             viewEmployee.Close();
             addEmployee.Close();
             updateEmployee.Close();
             deleteEmployee.Close();
+            visitorForm.Close();
         }
 
         private void frmDashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
             CloseAllForms();
+        }
+
+        private void btnVisitor_Click(object sender, EventArgs e)
+        {
+            //if (Application.OpenForms.OfType<frmViewEmployee>().Count() == 1)
+            //{
+            //    Application.OpenForms.OfType<frmVisitorForm>().First().Close();
+            //    frmVisitorForm visitorForm = new frmVisitorForm();
+            //    visitorForm.Show();
+            //}
+            //else
+            //{
+                frmVisitorForm visitorForm = new frmVisitorForm();
+                visitorForm.ShowDialog();
+            //}
         }
     }
 }

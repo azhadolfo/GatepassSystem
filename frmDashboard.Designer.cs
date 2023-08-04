@@ -39,6 +39,7 @@
             this.validatePassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.btnVisitor = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +51,8 @@
             this.btnEmployees,
             this.generatePassToolStripMenuItem,
             this.validatePassToolStripMenuItem,
-            this.btnLogout});
+            this.btnLogout,
+            this.btnVisitor});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1442, 40);
@@ -151,6 +153,16 @@
             this.lblWelcome.TabIndex = 1;
             this.lblWelcome.Text = "Welcome Dashboard";
             // 
+            // btnVisitor
+            // 
+            this.btnVisitor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
+            this.btnVisitor.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitor.Image")));
+            this.btnVisitor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnVisitor.Name = "btnVisitor";
+            this.btnVisitor.Size = new System.Drawing.Size(166, 36);
+            this.btnVisitor.Text = "Visitor\'s Form";
+            this.btnVisitor.Click += new System.EventHandler(this.btnVisitor_Click);
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 19F);
@@ -188,5 +200,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnUpdate;
         private System.Windows.Forms.ToolStripMenuItem btnDelete;
         private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.ToolStripMenuItem btnVisitor;
     }
 }

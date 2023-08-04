@@ -123,13 +123,12 @@ namespace TestingPhase
             frmAddEmployee addEmployee = new frmAddEmployee();
             frmUpdateEmployee updateEmployee = new frmUpdateEmployee();
             frmDeleteEmployee deleteEmployee = new frmDeleteEmployee();
-            frmVisitorForm visitorForm = new frmVisitorForm();
 
             viewEmployee.Close();
             addEmployee.Close();
             updateEmployee.Close();
             deleteEmployee.Close();
-            visitorForm.Close();
+
         }
 
         private void frmDashboard_FormClosed(object sender, FormClosedEventArgs e)

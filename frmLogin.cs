@@ -22,9 +22,12 @@ namespace TestingPhase
         }
 
         //closing the form
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnSignUp_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            frmSignUp frmSignUp = new frmSignUp();
+            frmSignUp.ShowDialog();
+
+            this.Hide();
         }
 
         //Login button and checking if the user is existing or not
@@ -129,6 +132,12 @@ namespace TestingPhase
             btnShow.Visible = true;
             btnHide.Visible = false;
             txtPassword.UseSystemPasswordChar = true;
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            // Set the tooltip text for the button
+            toolTip1.SetToolTip(btnSignUp, "Don't have an account? Click this button.");
         }
     }
 }

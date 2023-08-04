@@ -39,6 +39,8 @@ namespace TestingPhase
         public static bool isadd { get; set; }
         public static bool isdelete { get; set; }
 
+        public static bool isNew { get; set; }
+
         public DataSet GetData(string query)
         {
             DataSet ds = new DataSet();
@@ -94,12 +96,13 @@ namespace TestingPhase
 
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
-                string query = "INSERT INTO tblemployee (first_name, last_name, username, password) VALUES (@fname, @lname, @username, @password)";
+                string query = "INSERT INTO tblemployee (first_name, last_name, username, password, isadmin) VALUES (@fname, @lname, @username, @password, @isadmin)";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@fname", fname);
                 cmd.Parameters.AddWithValue("@lname", lname);
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@password", password);
+                cmd.Parameters.AddWithValue("@isadmin", isadmin);
 
                 try
                 {

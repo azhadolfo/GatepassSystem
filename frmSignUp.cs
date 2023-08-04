@@ -2,60 +2,68 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TestingPhase
 {
-   
-    public partial class frmAddEmployee : Form
+    public partial class frmSignUp : Form
     {
         rootv root = new rootv();
-        //string query;
-        //DataSet ds;
         DataTable dt;
-     
-        
-        public frmAddEmployee()
+        public frmSignUp()
         {
             InitializeComponent();
         }
 
-
-
-        private void btnSave_Click(object sender, EventArgs e)
+        private void ClearFields()
         {
-         
+            txtFirstname.Clear();
+            txtLastname.Clear();
+            txtUsername.Clear();
+            txtPassword.Clear();
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.Show();
+            this.Close();
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
             try
             {
                 var fname = txtFirstname.Text.Trim();
                 var lname = txtLastname.Text.Trim();
                 var username = txtUsername.Text.Trim();
                 var password = txtPassword.Text.Trim();
+                
 
 
-                if(!String.IsNullOrEmpty(fname)&&
-                   !String.IsNullOrEmpty(lname)&&
-                   !String.IsNullOrEmpty(username)&&
+                if (!String.IsNullOrEmpty(fname) &&
+                   !String.IsNullOrEmpty(lname) &&
+                   !String.IsNullOrEmpty(username) &&
                    !String.IsNullOrEmpty(password))
                 {
                     dt = root.GetDataByUsername(username);
 
                     if (dt != null && dt.Rows.Count == 0)
                     {
-                        
-                        root.AddData(fname,lname,username,password);
+
+                        root.AddData(fname, lname, username, password);
                         ClearFields();
-                    
+                        lblNotAvailable.Visible = false;
+
                     }
                     else
                     {
-                        MessageBox.Show("The username is already linked with another account","System Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        lblNotAvailable.Visible = true;
                         txtUsername.Focus();
                     }
                 }
@@ -71,15 +79,6 @@ namespace TestingPhase
             {
                 MessageBox.Show("There's an error while saving the data.", "MIS DEPARTMENT", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void ClearFields()
-        {
-            txtFirstname.Clear();
-            txtLastname.Clear();
-            txtUsername.Clear();
-            txtPassword.Clear();
-
         }
     }
 }

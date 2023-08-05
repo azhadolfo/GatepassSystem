@@ -14,8 +14,8 @@ namespace TestingPhase
     public partial class frmUpdateEmployee : Form
     {
         rootv root = new rootv();
-        string query;
-        DataSet ds;
+        //string query;
+        //DataSet ds;
         DataTable dt;
         bool employeeAvailable;
         bool hasChange;

@@ -13,8 +13,8 @@ namespace TestingPhase
 {
     public partial class frmViewEmployee : Form
     {
-        rootv root = new rootv();
-        DataTable dt;
+        //rootv root = new rootv();
+        //DataTable dt;
 
         public frmViewEmployee()
         {

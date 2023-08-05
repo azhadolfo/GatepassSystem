@@ -145,5 +145,10 @@ namespace TestingPhase
             frmVisitorForm frmVisitorForm = new frmVisitorForm();
             frmVisitorForm.ShowDialog(this);
         }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            btnShow.Visible = true;
+        }
     }
 }

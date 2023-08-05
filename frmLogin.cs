@@ -139,5 +139,11 @@ namespace TestingPhase
             // Set the tooltip text for the button
             toolTip1.SetToolTip(btnSignUp, "Don't have an account? Click this button.");
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmVisitorForm frmVisitorForm = new frmVisitorForm();
+            frmVisitorForm.ShowDialog(this);
+        }
     }
 }

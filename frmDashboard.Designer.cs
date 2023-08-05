@@ -35,11 +35,9 @@
             this.btnAddEmployee = new System.Windows.Forms.ToolStripMenuItem();
             this.btnUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.generatePassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.validatePassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLogout = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblWelcome = new System.Windows.Forms.Label();
             this.btnVisitor = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,8 +47,6 @@
             this.menuStrip1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnEmployees,
-            this.generatePassToolStripMenuItem,
-            this.validatePassToolStripMenuItem,
             this.btnLogout,
             this.btnVisitor});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -113,24 +109,6 @@
             this.btnDelete.Text = "Delete Employee";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // generatePassToolStripMenuItem
-            // 
-            this.generatePassToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
-            this.generatePassToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("generatePassToolStripMenuItem.Image")));
-            this.generatePassToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.generatePassToolStripMenuItem.Name = "generatePassToolStripMenuItem";
-            this.generatePassToolStripMenuItem.Size = new System.Drawing.Size(171, 36);
-            this.generatePassToolStripMenuItem.Text = "Generate Pass";
-            // 
-            // validatePassToolStripMenuItem
-            // 
-            this.validatePassToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
-            this.validatePassToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("validatePassToolStripMenuItem.Image")));
-            this.validatePassToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.validatePassToolStripMenuItem.Name = "validatePassToolStripMenuItem";
-            this.validatePassToolStripMenuItem.Size = new System.Drawing.Size(163, 36);
-            this.validatePassToolStripMenuItem.Text = "Validate Pass";
-            // 
             // btnLogout
             // 
             this.btnLogout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -142,6 +120,16 @@
             this.btnLogout.Text = "Log Out";
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // btnVisitor
+            // 
+            this.btnVisitor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
+            this.btnVisitor.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitor.Image")));
+            this.btnVisitor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnVisitor.Name = "btnVisitor";
+            this.btnVisitor.Size = new System.Drawing.Size(166, 36);
+            this.btnVisitor.Text = "Visitor\'s Form";
+            this.btnVisitor.Click += new System.EventHandler(this.btnVisitor_Click);
+            // 
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
@@ -152,16 +140,6 @@
             this.lblWelcome.Size = new System.Drawing.Size(344, 58);
             this.lblWelcome.TabIndex = 1;
             this.lblWelcome.Text = "Welcome Dashboard";
-            // 
-            // btnVisitor
-            // 
-            this.btnVisitor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
-            this.btnVisitor.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitor.Image")));
-            this.btnVisitor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnVisitor.Name = "btnVisitor";
-            this.btnVisitor.Size = new System.Drawing.Size(166, 36);
-            this.btnVisitor.Text = "Visitor\'s Form";
-            this.btnVisitor.Click += new System.EventHandler(this.btnVisitor_Click);
             // 
             // frmDashboard
             // 
@@ -194,8 +172,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnEmployees;
         private System.Windows.Forms.ToolStripMenuItem btnViewEmployee;
         private System.Windows.Forms.ToolStripMenuItem btnAddEmployee;
-        private System.Windows.Forms.ToolStripMenuItem generatePassToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem validatePassToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnLogout;
         private System.Windows.Forms.ToolStripMenuItem btnUpdate;
         private System.Windows.Forms.ToolStripMenuItem btnDelete;

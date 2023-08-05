@@ -47,12 +47,15 @@ namespace TestingPhase
             if (rootv.isadmin)
             {
                 lblWelcome.Text = "Welcome Admin";
+                btnVisitor.Text = "Validate Visitor's Form";
+
                
             }
             else
             {
                 btnEmployees.Visible = false;
                 lblWelcome.Text = $"Welcome {fname}";
+                btnVisitor.Text = "Visitors Form";
             }
         }
 
@@ -146,8 +149,20 @@ namespace TestingPhase
             //}
             //else
             //{
+            if(rootv.isadmin)
+            {
+                frmValidateVisitor frmValidateVisitor = new frmValidateVisitor();
+                frmValidateVisitor.ShowDialog();
+            }    
+            else
+            {
                 frmVisitorForm visitorForm = new frmVisitorForm();
                 visitorForm.ShowDialog();
+            }
+
+
+            //frmVisitorForm visitorForm = new frmVisitorForm();
+            //visitorForm.ShowDialog();
             //}
         }
     }

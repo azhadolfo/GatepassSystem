@@ -142,7 +142,6 @@ namespace TestingPhase
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            panel1.Visible = false;
             frmVisitorForm frmVisitorForm = new frmVisitorForm();
             frmVisitorForm.ShowDialog(this);
         }

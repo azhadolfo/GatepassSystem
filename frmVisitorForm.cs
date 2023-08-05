@@ -163,7 +163,7 @@ namespace TestingPhase
 
             using (SqlConnection connection = new SqlConnection(rootv.ConnectionString))
             {
-                string query = "INSERT INTO Visitors (Name, ContactNo, Address, PurposeOfVisit) " +
+                string query = "INSERT INTO tblvisitors (Name, ContactNo, Address, PurposeOfVisit) " +
                                "VALUES (@Name, @ContactNo, @Address, @PurposeOfVisit); " +
                                "SELECT SCOPE_IDENTITY();";
 
@@ -186,7 +186,7 @@ namespace TestingPhase
         {
             using (SqlConnection connection = new SqlConnection(rootv.ConnectionString))
             {
-                string query = "INSERT INTO GatePasses (GatePassId, VisitorId, EmployeeId, IssueDate, ExpiryDate) " +
+                string query = "INSERT INTO tblgatepass (GatePassId, VisitorId, EmployeeId, IssueDate, ExpiryDate) " +
                                "VALUES (@GatePassId, @VisitorId, @EmployeeId, @IssueDate, @ExpiryDate);";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -243,7 +243,7 @@ namespace TestingPhase
 
             using (SqlConnection connection = new SqlConnection(rootv.ConnectionString))
             {
-                string query = "SELECT GatePassId, VisitorId, EmployeeId, IssueDate, ExpiryDate FROM GatePasses WHERE GatePassId = @GatePassId";
+                string query = "SELECT GatePassId, VisitorId, EmployeeId, IssueDate, ExpiryDate FROM tblgatepass WHERE GatePassId = @GatePassId";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {

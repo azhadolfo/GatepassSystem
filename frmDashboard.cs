@@ -54,7 +54,7 @@ namespace TestingPhase
             else if (rootv.role == "validator") {
 
                 btnEmployees.Visible = false;
-                lblWelcome.Text = $"Welcome {fname}";
+                lblWelcome.Text = $"Welcome Validator {fname}";
                 btnVisitor.Text = "Validate Visitor's Form";
             }
             else

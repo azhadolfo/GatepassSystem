@@ -44,12 +44,18 @@ namespace TestingPhase
 
         private void frmDashboard_Load(object sender, EventArgs e)
         {
-            if (rootv.isadmin)
+            if (rootv.role == "admin")
             {
                 lblWelcome.Text = "Welcome Admin";
                 btnVisitor.Text = "Validate Visitor's Form";
 
                
+            }
+            else if (rootv.role == "validator") {
+
+                btnEmployees.Visible = false;
+                lblWelcome.Text = $"Welcome {fname}";
+                btnVisitor.Text = "Validate Visitor's Form";
             }
             else
             {
@@ -149,7 +155,7 @@ namespace TestingPhase
             //}
             //else
             //{
-            if(rootv.isadmin)
+            if(rootv.role == "admin" && rootv.role == "validator")
             {
                 frmValidateVisitor frmValidateVisitor = new frmValidateVisitor();
                 frmValidateVisitor.ShowDialog();

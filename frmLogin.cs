@@ -51,7 +51,7 @@ namespace TestingPhase
                 {
                     if (dataTable.Rows.Count > 0)
                     {
-                        rootv.isadmin = Convert.ToBoolean(dataTable.Rows[0]["isadmin"].ToString());
+                        rootv.role = dataTable.Rows[0]["role"].ToString();
                         var fname = dataTable.Rows[0]["first_name"].ToString();
 
                         //if (rootv.isadmin == true)

@@ -33,7 +33,7 @@ namespace TestingPhase
             return connection;
         }
 
-        public static bool isadmin { get; set; } = false;
+        public static string role { get; set; }
 
         public static bool isupdate { get; set; }
         public static bool isadd { get; set; }
@@ -96,13 +96,13 @@ namespace TestingPhase
 
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
-                string query = "INSERT INTO tblemployee (first_name, last_name, username, password, isadmin) VALUES (@fname, @lname, @username, @password, @isadmin)";
+                string query = "INSERT INTO tblemployee (first_name, last_name, username, password, role) VALUES (@fname, @lname, @username, @password, @role)";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@fname", fname);
                 cmd.Parameters.AddWithValue("@lname", lname);
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@password", password);
-                cmd.Parameters.AddWithValue("@isadmin", isadmin);
+                cmd.Parameters.AddWithValue("@role", role);
 
                 try
                 {

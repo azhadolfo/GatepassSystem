@@ -51,7 +51,7 @@ namespace TestingPhase
                 {
                     if (dataTable.Rows.Count > 0)
                     {
-                        rootv.role = dataTable.Rows[0]["role"].ToString().Trim();
+                        rootv.role = dataTable.Rows[0]["role"].ToString().Trim().ToLower();
                         var fname = dataTable.Rows[0]["first_name"].ToString().Trim();
 
                         //if (rootv.isadmin == true)

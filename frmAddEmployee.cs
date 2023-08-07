@@ -35,12 +35,14 @@ namespace TestingPhase
             {
                 var fname = txtFirstname.Text.Trim();
                 var lname = txtLastname.Text.Trim();
+                var role = cboRole.Text.Trim();
                 var username = txtUsername.Text.Trim();
                 var password = txtPassword.Text.Trim();
 
 
                 if(!String.IsNullOrEmpty(fname)&&
                    !String.IsNullOrEmpty(lname)&&
+                   !String.IsNullOrEmpty(role)&&
                    !String.IsNullOrEmpty(username)&&
                    !String.IsNullOrEmpty(password))
                 {
@@ -49,7 +51,7 @@ namespace TestingPhase
                     if (dt != null && dt.Rows.Count == 0)
                     {
                         
-                        root.AddData(fname,lname,username,password);
+                        root.AddData(fname,lname,role,username,password);
                         ClearFields();
                     
                     }
@@ -77,6 +79,7 @@ namespace TestingPhase
         {
             txtFirstname.Clear();
             txtLastname.Clear();
+            cboRole.SelectedIndex = 0;
             txtUsername.Clear();
             txtPassword.Clear();
 

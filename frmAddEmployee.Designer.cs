@@ -169,13 +169,12 @@
             // cboRole
             // 
             this.cboRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
-            this.cboRole.Enabled = false;
+            this.cboRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRole.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboRole.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.cboRole.FormattingEnabled = true;
             this.cboRole.Items.AddRange(new object[] {
-            "",
             "User",
             "Admin",
             "Validator"});

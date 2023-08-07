@@ -44,6 +44,7 @@ namespace TestingPhase
                 var username = txtUsername.Text.Trim();
                 var password = txtPassword.Text.Trim();
                 
+                
 
 
                 if (!String.IsNullOrEmpty(fname) &&
@@ -56,7 +57,7 @@ namespace TestingPhase
                     if (dt != null && dt.Rows.Count == 0)
                     {
 
-                        root.AddData(fname, lname, username, password);
+                        root.AddData(fname, lname, "user", username, password);
                         ClearFields();
                         lblNotAvailable.Visible = false;
 

@@ -91,7 +91,7 @@ namespace TestingPhase
 
         //this is the function for Adding the data inside the database
         #region -- Add Data Function --
-        public void AddData(string fname, string lname, string username, string password)
+        public void AddData(string fname, string lname, string role, string username, string password)
         {
 
             using (SqlConnection conn = new SqlConnection(ConnectionString))

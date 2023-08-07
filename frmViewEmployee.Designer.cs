@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.table_username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.table_first_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.table_last_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,15 +55,15 @@
             this.table_username,
             this.table_first_name,
             this.table_last_name});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(22)))), ((int)(((byte)(23)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(22)))), ((int)(((byte)(23)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.dataGridView1.Location = new System.Drawing.Point(29, 149);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(1, 4, 1, 4);
@@ -72,6 +72,27 @@
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView1.Size = new System.Drawing.Size(1026, 390);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // table_username
+            // 
+            this.table_username.HeaderText = "USERNAME";
+            this.table_username.Name = "table_username";
+            this.table_username.ReadOnly = true;
+            this.table_username.Width = 400;
+            // 
+            // table_first_name
+            // 
+            this.table_first_name.HeaderText = "FIRST NAME";
+            this.table_first_name.Name = "table_first_name";
+            this.table_first_name.ReadOnly = true;
+            this.table_first_name.Width = 300;
+            // 
+            // table_last_name
+            // 
+            this.table_last_name.HeaderText = "LAST NAME";
+            this.table_last_name.Name = "table_last_name";
+            this.table_last_name.ReadOnly = true;
+            this.table_last_name.Width = 350;
             // 
             // label1
             // 
@@ -107,27 +128,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "View Employee";
             // 
-            // table_username
-            // 
-            this.table_username.HeaderText = "USERNAME";
-            this.table_username.Name = "table_username";
-            this.table_username.ReadOnly = true;
-            this.table_username.Width = 400;
-            // 
-            // table_first_name
-            // 
-            this.table_first_name.HeaderText = "FIRST NAME";
-            this.table_first_name.Name = "table_first_name";
-            this.table_first_name.ReadOnly = true;
-            this.table_first_name.Width = 300;
-            // 
-            // table_last_name
-            // 
-            this.table_last_name.HeaderText = "LAST NAME";
-            this.table_last_name.Name = "table_last_name";
-            this.table_last_name.ReadOnly = true;
-            this.table_last_name.Width = 350;
-            // 
             // frmViewEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 18F);
@@ -144,7 +144,7 @@
             this.Margin = new System.Windows.Forms.Padding(1, 4, 1, 4);
             this.Name = "frmViewEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmAddEmployee";
+            this.Text = "View Employee";
             this.Load += new System.EventHandler(this.frmViewEmployee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

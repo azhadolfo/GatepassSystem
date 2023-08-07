@@ -35,6 +35,7 @@
             this.btnAddEmployee = new System.Windows.Forms.ToolStripMenuItem();
             this.btnUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnUser = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.btnVisitor = new System.Windows.Forms.ToolStripMenuItem();
             this.lblWelcome = new System.Windows.Forms.Label();
@@ -47,7 +48,7 @@
             this.menuStrip1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnEmployees,
-            this.btnLogout,
+            this.btnUser,
             this.btnVisitor});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -109,15 +110,25 @@
             this.btnDelete.Text = "Delete Employee";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnUser
+            // 
+            this.btnUser.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnUser.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnLogout});
+            this.btnUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
+            this.btnUser.Image = ((System.Drawing.Image)(resources.GetObject("btnUser.Image")));
+            this.btnUser.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnUser.Name = "btnUser";
+            this.btnUser.Size = new System.Drawing.Size(44, 36);
+            // 
             // btnLogout
             // 
-            this.btnLogout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(117, 36);
-            this.btnLogout.Text = "Log Out";
+            this.btnLogout.Size = new System.Drawing.Size(196, 38);
+            this.btnLogout.Text = "Sign Out";
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnVisitor
@@ -172,10 +183,11 @@
         private System.Windows.Forms.ToolStripMenuItem btnEmployees;
         private System.Windows.Forms.ToolStripMenuItem btnViewEmployee;
         private System.Windows.Forms.ToolStripMenuItem btnAddEmployee;
-        private System.Windows.Forms.ToolStripMenuItem btnLogout;
+        private System.Windows.Forms.ToolStripMenuItem btnUser;
         private System.Windows.Forms.ToolStripMenuItem btnUpdate;
         private System.Windows.Forms.ToolStripMenuItem btnDelete;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.ToolStripMenuItem btnVisitor;
+        private System.Windows.Forms.ToolStripMenuItem btnLogout;
     }
 }

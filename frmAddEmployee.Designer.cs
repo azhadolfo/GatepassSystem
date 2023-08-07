@@ -39,6 +39,8 @@
             this.txtLastname = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cboRole = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -95,7 +97,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(241, 261);
+            this.label4.Location = new System.Drawing.Point(241, 332);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 33);
             this.label4.TabIndex = 4;
@@ -106,7 +108,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(241, 334);
+            this.label5.Location = new System.Drawing.Point(241, 405);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(101, 33);
             this.label5.TabIndex = 5;
@@ -137,7 +139,7 @@
             this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
             this.txtUsername.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.txtUsername.Location = new System.Drawing.Point(355, 261);
+            this.txtUsername.Location = new System.Drawing.Point(355, 332);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(435, 36);
             this.txtUsername.TabIndex = 8;
@@ -147,11 +149,40 @@
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
             this.txtPassword.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.txtPassword.Location = new System.Drawing.Point(354, 334);
+            this.txtPassword.Location = new System.Drawing.Point(354, 405);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(435, 36);
             this.txtPassword.TabIndex = 9;
             this.txtPassword.UseSystemPasswordChar = true;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(241, 262);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 33);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Role";
+            // 
+            // cboRole
+            // 
+            this.cboRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
+            this.cboRole.Enabled = false;
+            this.cboRole.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cboRole.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
+            this.cboRole.FormattingEnabled = true;
+            this.cboRole.Items.AddRange(new object[] {
+            "",
+            "User",
+            "Admin",
+            "Validator"});
+            this.cboRole.Location = new System.Drawing.Point(354, 262);
+            this.cboRole.Name = "cboRole";
+            this.cboRole.Size = new System.Drawing.Size(436, 37);
+            this.cboRole.TabIndex = 11;
             // 
             // frmAddEmployee
             // 
@@ -159,6 +190,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
             this.ClientSize = new System.Drawing.Size(1085, 552);
+            this.Controls.Add(this.cboRole);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtLastname);
@@ -193,5 +226,7 @@
         private System.Windows.Forms.TextBox txtLastname;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cboRole;
     }
 }

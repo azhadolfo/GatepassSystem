@@ -24,22 +24,6 @@ namespace TestingPhase
             this.fname = fname;
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            DialogResult dialog = MessageBox.Show("Are you sure you want to log out?", "System Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (dialog == DialogResult.Yes)
-            {
-
-                // Show the login form
-                frmLogin frmLogin = new frmLogin();
-                frmLogin.Show();
-
-                // Hide the current form
-                this.Close();
-            }
-        }
-
 
 
         private void frmDashboard_Load(object sender, EventArgs e)
@@ -63,6 +47,8 @@ namespace TestingPhase
                 lblWelcome.Text = $"Welcome {fname}";
                 btnVisitor.Text = "Visitors Form";
             }
+
+            btnUser.Text = fname;
         }
 
         private void btnViewEmployee_Click(object sender, EventArgs e)
@@ -170,6 +156,23 @@ namespace TestingPhase
             //frmVisitorForm visitorForm = new frmVisitorForm();
             //visitorForm.ShowDialog();
             //}
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Are you sure you want to log out?", "System Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dialog == DialogResult.Yes)
+            {
+
+                // Show the login form
+                frmLogin frmLogin = new frmLogin();
+                frmLogin.Show();
+
+                // Hide the current form
+                this.Close();
+                CloseAllForms();
+            }
         }
     }
 }

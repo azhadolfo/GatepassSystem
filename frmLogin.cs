@@ -148,7 +148,16 @@ namespace TestingPhase
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-            btnShow.Visible = true;
+            if(String.IsNullOrEmpty(txtPassword.Text))
+            {
+                btnShow.Visible = false;
+                btnHide.Visible = false;
+            }
+            else
+            {
+                btnShow.Visible = true;
+            }
+            
         }
     }
 }

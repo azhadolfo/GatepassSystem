@@ -3,3 +3,5 @@ Background : #031617
 Primary: #119397
 Secondary : #063537
 Accent : #23e0e7
+
+Font Properties: Bahnschrift Condensed, 12pt

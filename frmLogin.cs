@@ -16,9 +16,11 @@ namespace TestingPhase
     {
         //rootv rootv = new rootv();
         //string query;
+        private PasswordHasher passwordHasher; 
         public frmLogin()
         {
             InitializeComponent();
+            passwordHasher = new PasswordHasher();
         }
 
         //closing the form
@@ -87,6 +89,7 @@ namespace TestingPhase
         private DataTable GetInfo(string connectionString)
         {
             DataTable dataTable = new DataTable();
+            string hashedPassword = passwordHasher.HashPassword(txtPassword.Text);
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -101,7 +104,7 @@ namespace TestingPhase
                     // Create the SqlCommand object
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("username", txtUsername.Text);
-                    command.Parameters.AddWithValue("password", txtPassword.Text);
+                    command.Parameters.AddWithValue("password", hashedPassword);
 
                     // Create a SqlDataAdapter to execute the command and fill the DataTable
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(command);

@@ -31,8 +31,8 @@ namespace TestingPhase
         private void btnSave_Click(object sender, EventArgs e)
         {
          
-            try
-            {
+            //try
+            //{
                 var fname = txtFirstname.Text.Trim();
                 var lname = txtLastname.Text.Trim();
                 var role = cboRole.Text.Trim();
@@ -68,11 +68,11 @@ namespace TestingPhase
 
 
 
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("There's an error while saving the data.", "MIS DEPARTMENT", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("There's an error while saving the data.", "MIS DEPARTMENT", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void ClearFields()

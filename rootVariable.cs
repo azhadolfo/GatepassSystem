@@ -93,6 +93,8 @@ namespace TestingPhase
         #region -- Add Data Function --
         public void AddData(string fname, string lname, string role, string username, string password)
         {
+            PasswordHasher passwordHasher = new PasswordHasher();
+            string hashedPassword = passwordHasher.HashPassword(password);
 
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
@@ -101,7 +103,7 @@ namespace TestingPhase
                 cmd.Parameters.AddWithValue("@fname", fname);
                 cmd.Parameters.AddWithValue("@lname", lname);
                 cmd.Parameters.AddWithValue("@username", username);
-                cmd.Parameters.AddWithValue("@password", password);
+                cmd.Parameters.AddWithValue("@password", hashedPassword);
                 cmd.Parameters.AddWithValue("@role", role);
 
                 try

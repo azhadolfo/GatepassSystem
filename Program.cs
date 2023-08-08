@@ -34,10 +34,8 @@ namespace TestingPhase
         public DateTime IssueDate { get; set; }
         public DateTime ExpiryDate { get; set; }
 
-        public bool IsExpired ()
-        {
-            return DateTime.Now > ExpiryDate;
-        }
+        public bool IsExpired () => DateTime.Now > ExpiryDate;
+      
     }
 
     // Employee Class

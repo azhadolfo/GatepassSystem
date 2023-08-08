@@ -141,7 +141,7 @@ namespace TestingPhase
             //}
             //else
             //{
-            if(rootv.role == "admin" && rootv.role == "validator")
+            if(rootv.role == "admin" || rootv.role == "validator")
             {
                 frmValidateVisitor frmValidateVisitor = new frmValidateVisitor();
                 frmValidateVisitor.ShowDialog();
@@ -164,14 +164,15 @@ namespace TestingPhase
 
             if (dialog == DialogResult.Yes)
             {
+                // Hide the current form
+                this.Close();
+                CloseAllForms();
 
                 // Show the login form
                 frmLogin frmLogin = new frmLogin();
                 frmLogin.Show();
 
-                // Hide the current form
-                this.Close();
-                CloseAllForms();
+               
             }
         }
     }

@@ -53,6 +53,7 @@ namespace TestingPhase
                 {
                     if (dataTable.Rows.Count > 0)
                     {
+                        rootv.employeeId = Convert.ToInt32(dataTable.Rows[0]["id"].ToString());
                         rootv.role = dataTable.Rows[0]["role"].ToString().Trim().ToLower();
                         var fname = dataTable.Rows[0]["first_name"].ToString().Trim();
 

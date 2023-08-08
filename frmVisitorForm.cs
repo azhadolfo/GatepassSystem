@@ -140,7 +140,7 @@ namespace TestingPhase
             {
                 GatePassId = GenerateGatePassId(), // Generate a unique GatePass ID
                 VisitorId = visitorId,
-                EmployeeId = 0, // For visitors, set the Employee to null
+                EmployeeId = rootv.employeeId, // For visitors, set the Employee to null
                 IssueDate = DateTime.Now,
                 ExpiryDate = DateTime.Now.AddHours(2) // Set the expiry time for the visitor (you can adjust this as per your requirements)
             };

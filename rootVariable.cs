@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Security.Policy;
 
 namespace TestingPhase
 {
@@ -40,6 +41,8 @@ namespace TestingPhase
         public static bool isdelete { get; set; }
 
         public static bool isNew { get; set; }
+
+        public static int employeeId { get; set; } = 0;
 
         public DataSet GetData(string query)
         {

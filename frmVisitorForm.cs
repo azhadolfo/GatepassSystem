@@ -207,7 +207,7 @@ namespace TestingPhase
         {
             // Generate a unique GatePass ID (you can implement your own logic here)
             // For simplicity, you can use a random number or a combination of timestamp and random number.
-            return new Random().Next(1000, 9999);
+            return new Random().Next(1000, 9999) + 1;
         }
 
         private void ClearForm()

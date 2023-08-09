@@ -30,7 +30,7 @@ namespace TestingPhase
         {
             if (rootv.role == "admin")
             {
-                lblWelcome.Text = "Welcome Admin";
+                SayWelcome("Admin");
                 btnVisitor.Text = "Validate Visitor's Form";
 
                
@@ -38,13 +38,13 @@ namespace TestingPhase
             else if (rootv.role == "validator") {
 
                 btnEmployees.Visible = false;
-                lblWelcome.Text = $"Welcome Validator {fname}";
+                SayWelcome(fname);
                 btnVisitor.Text = "Validate Visitor's Form";
             }
             else
             {
                 btnEmployees.Visible = false;
-                lblWelcome.Text = $"Welcome {fname}";
+                SayWelcome(fname);
                 btnVisitor.Text = "Visitors Form";
             }
 
@@ -175,5 +175,7 @@ namespace TestingPhase
                
             }
         }
+
+        private void SayWelcome(string fname) => lblWelcome.Text = $"Welcome {fname}";
     }
 }

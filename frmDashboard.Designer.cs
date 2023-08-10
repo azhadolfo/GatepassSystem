@@ -127,7 +127,7 @@
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(196, 38);
+            this.btnLogout.Size = new System.Drawing.Size(169, 38);
             this.btnLogout.Text = "Sign Out";
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 

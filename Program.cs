@@ -58,7 +58,7 @@ namespace TestingPhase
             }
             else
             {
-                MessageBox.Show($"This gatepass id:{gatePass.GatePassId} is valid." ,"MIS DEPARTMENT", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"This gatepass id: {gatePass.GatePassId} is valid." ,"MIS DEPARTMENT", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

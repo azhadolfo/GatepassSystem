@@ -46,9 +46,9 @@ namespace TestingPhase
 
                     while (rdr.Read())
                     {
-                        string fname = rdr.IsDBNull(1) ? string.Empty : rdr.GetString(1);
-                        string lname = rdr.IsDBNull(2) ? string.Empty : rdr.GetString(2);
-                        string username = rdr.IsDBNull(3) ? string.Empty : rdr.GetString(3);
+                        string fname = rdr.IsDBNull(1) ? string.Empty : rdr.GetString(1).Trim();
+                        string lname = rdr.IsDBNull(2) ? string.Empty : rdr.GetString(2).Trim();
+                        string username = rdr.IsDBNull(4) ? string.Empty : rdr.GetString(4).Trim();
 
                         dataGridView1.Rows.Add(username, fname, lname);
                     }

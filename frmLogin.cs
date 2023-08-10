@@ -16,11 +16,11 @@ namespace TestingPhase
     {
         //rootv rootv = new rootv();
         //string query;
-        private PasswordHasher passwordHasher; 
+        //private PasswordHasher passwordHasher; 
         public frmLogin()
         {
             InitializeComponent();
-            passwordHasher = new PasswordHasher();
+            //passwordHasher = new PasswordHasher();
         }
 
         //closing the form
@@ -90,7 +90,7 @@ namespace TestingPhase
         private DataTable GetInfo(string connectionString)
         {
             DataTable dataTable = new DataTable();
-            string hashedPassword = passwordHasher.HashPassword(txtPassword.Text);
+            string hashedPassword = PasswordHasher.HashPassword(txtPassword.Text);
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

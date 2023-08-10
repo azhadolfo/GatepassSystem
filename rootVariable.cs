@@ -96,8 +96,7 @@ namespace TestingPhase
         #region -- Add Data Function --
         public void AddData(string fname, string lname, string role, string username, string password)
         {
-            PasswordHasher passwordHasher = new PasswordHasher();
-            string hashedPassword = passwordHasher.HashPassword(password);
+            string hashedPassword = PasswordHasher.HashPassword(password);
 
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {

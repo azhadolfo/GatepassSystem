@@ -76,7 +76,7 @@ namespace TestingPhase
 
     public class PasswordHasher
     {
-        public string HashPassword(string password)
+        public static string HashPassword(string password)
         {
             using (SHA256 sha256Hash = SHA256.Create())
             {

@@ -19,6 +19,7 @@ namespace TestingPhase
         DataTable dt;
         bool employeeAvailable;
         bool hasChange;
+        private Logs logs;
 
         public frmUpdateEmployee()
         {
@@ -138,6 +139,7 @@ namespace TestingPhase
                         if (!(String.IsNullOrEmpty(txtUsername.Text) && String.IsNullOrEmpty(txtFirstname.Text) && String.IsNullOrEmpty(txtLastname.Text)))
                         {
                             root.UpdateData(username, fname, lname);
+                            logs = new Logs(rootv.username, Environment.UserDomainName, $"Updating data of {username} ", DateTime.Now);
                             hasChange = false;
                         }
                         else
@@ -189,5 +191,7 @@ namespace TestingPhase
             if (!hasChange)
                 hasChange = true;
         }
+
+  
     }
 }

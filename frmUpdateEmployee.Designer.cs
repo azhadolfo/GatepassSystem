@@ -76,6 +76,7 @@
             this.txtLastname.Name = "txtLastname";
             this.txtLastname.Size = new System.Drawing.Size(368, 36);
             this.txtLastname.TabIndex = 15;
+            this.txtLastname.TextChanged += new System.EventHandler(this.txtLastname_TextChanged);
             // 
             // txtFirstname
             // 
@@ -86,6 +87,7 @@
             this.txtFirstname.Name = "txtFirstname";
             this.txtFirstname.Size = new System.Drawing.Size(368, 36);
             this.txtFirstname.TabIndex = 14;
+            this.txtFirstname.TextChanged += new System.EventHandler(this.txtFirstname_TextChanged);
             // 
             // label4
             // 

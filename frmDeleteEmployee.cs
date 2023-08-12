@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace TestingPhase
 {
@@ -16,6 +18,8 @@ namespace TestingPhase
         rootv root = new rootv();
         private int selectedDataCount = 0;
         msgOK msgOK = new msgOK();
+        private Logs logs;
+        private string name;
         public frmDeleteEmployee()
         {
             InitializeComponent();
@@ -46,7 +50,8 @@ namespace TestingPhase
                         int id = rdr.IsDBNull(0) ? 0 : rdr.GetInt32(0);
                         string fname = rdr.IsDBNull(1) ? string.Empty : rdr.GetString(1);
                         string lname = rdr.IsDBNull(2) ? string.Empty : rdr.GetString(2);
-                        string username = rdr.IsDBNull(3) ? string.Empty : rdr.GetString(3);
+                        string username = rdr.IsDBNull(4) ? string.Empty : rdr.GetString(4);
+                        name = username;
 
                         dataGridView1.Rows.Add(id, username, fname, lname);
                     }
@@ -187,6 +192,7 @@ namespace TestingPhase
                             //idsToDelete.Add(id);
                             dataGridView1.Rows.Remove(row);
                             root.DeleteData(id);
+                            logs = new Logs(rootv.username, Environment.UserDomainName, $"Deleting the user {name}", DateTime.Now);
                         }
                     }
 

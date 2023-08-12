@@ -39,6 +39,7 @@
             this.btnLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.btnVisitor = new System.Windows.Forms.ToolStripMenuItem();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.btnLogs = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnEmployees,
             this.btnUser,
-            this.btnVisitor});
+            this.btnVisitor,
+            this.btnLogs});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1442, 40);
@@ -152,6 +154,16 @@
             this.lblWelcome.TabIndex = 1;
             this.lblWelcome.Text = "Welcome Dashboard";
             // 
+            // btnLogs
+            // 
+            this.btnLogs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
+            this.btnLogs.Image = global::TestingPhase.Properties.Resources.history;
+            this.btnLogs.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnLogs.Name = "btnLogs";
+            this.btnLogs.Size = new System.Drawing.Size(94, 36);
+            this.btnLogs.Text = "Logs";
+            this.btnLogs.Click += new System.EventHandler(this.btnLogs_Click);
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 19F);
@@ -189,5 +201,6 @@
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.ToolStripMenuItem btnVisitor;
         private System.Windows.Forms.ToolStripMenuItem btnLogout;
+        private System.Windows.Forms.ToolStripMenuItem btnLogs;
     }
 }

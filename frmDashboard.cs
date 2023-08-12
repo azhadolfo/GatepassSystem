@@ -177,5 +177,20 @@ namespace TestingPhase
         }
 
         private void SayWelcome(string fname) => lblWelcome.Text = $"Welcome {fname}";
+
+        private void btnLogs_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<frmLogs>().Count() == 1)
+            {
+                Application.OpenForms.OfType<frmLogs>().First().Close();
+                frmLogs logs = new frmLogs();
+                logs.Show();
+            }
+            else
+            {
+                frmLogs logs = new frmLogs();
+                logs.Show();
+            }
+        }
     }
 }

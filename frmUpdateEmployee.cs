@@ -139,7 +139,7 @@ namespace TestingPhase
                         if (!(String.IsNullOrEmpty(txtUsername.Text) && String.IsNullOrEmpty(txtFirstname.Text) && String.IsNullOrEmpty(txtLastname.Text)))
                         {
                             root.UpdateData(username, fname, lname);
-                            logs = new Logs(rootv.username, Environment.UserDomainName, $"Updating data of {username} ", DateTime.Now);
+                            logs = new Logs(rootv.username, Environment.UserDomainName, $"Updating information of {username}", DateTime.Now);
                             hasChange = false;
                         }
                         else

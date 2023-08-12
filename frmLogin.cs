@@ -55,6 +55,7 @@ namespace TestingPhase
                     {
                         rootv.employeeId = Convert.ToInt32(dataTable.Rows[0]["id"].ToString());
                         rootv.role = dataTable.Rows[0]["role"].ToString().Trim().ToLower();
+                        rootv.username = dataTable.Rows[0]["username"].ToString().Trim();
                         var fname = dataTable.Rows[0]["first_name"].ToString().Trim();
 
                         //if (rootv.isadmin == true)

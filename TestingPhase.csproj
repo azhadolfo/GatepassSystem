@@ -59,6 +59,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
       <HintPath>..\..\..\..\Desktop\Azh Folder\Installer\BunifuCrack-main\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
+      <HintPath>..\..\..\..\Desktop\Azh Folder\Installer\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
       <HintPath>..\..\..\..\Desktop\Azh Folder\Installer\BunifuCrack-main\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
     </Reference>
@@ -151,6 +154,12 @@
     <Compile Include="frmVisitorForm.Designer.cs">
       <DependentUpon>frmVisitorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logs.cs" />
+    <Compile Include="logs_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>logs_DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="msgOK.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +216,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="logs_DataSet.xsc">
+      <DependentUpon>logs_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="logs_DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>logs_DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="logs_DataSet.xss">
+      <DependentUpon>logs_DataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

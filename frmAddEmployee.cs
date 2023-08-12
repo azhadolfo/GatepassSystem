@@ -19,6 +19,7 @@ namespace TestingPhase
         //string query;
         //DataSet ds;
         DataTable dt;
+        private Logs logs;
      
         
         public frmAddEmployee()
@@ -52,6 +53,7 @@ namespace TestingPhase
                     {
                         
                         root.AddData(fname,lname,role,username,password);
+                        logs = new Logs(rootv.username,Environment.UserDomainName,$"Adding new user {username} ",DateTime.Now);
                         ClearFields();
                     
                     }

@@ -156,9 +156,6 @@
       <DependentUpon>frmVisitorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Logs.cs" />
-    <Compile Include="logs_DataSet.cs">
-      <DependentUpon>logs_DataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="logs_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

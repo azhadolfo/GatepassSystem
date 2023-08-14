@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddEmployee));
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,7 +58,7 @@
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.Image = global::TestingPhase.Properties.Resources.save__1_;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.Location = new System.Drawing.Point(974, 498);
             this.btnSave.Name = "btnSave";

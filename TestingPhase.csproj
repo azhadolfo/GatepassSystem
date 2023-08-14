@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -260,6 +260,75 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\approved.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-user %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loupe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiple-users-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\writing.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

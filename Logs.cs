@@ -18,7 +18,7 @@ namespace TestingPhase
         public DateTime date { get; set; }
 
         // Parameterized Constructor
-        public Logs(string username, string computer, string activity, DateTime date)
+        public Logs(string? username, string computer, string activity, DateTime date)
         {
             this.username = username;
             this.computer = computer;

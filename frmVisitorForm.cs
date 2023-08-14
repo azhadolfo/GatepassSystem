@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace TestingPhase
 {
@@ -106,7 +107,7 @@ namespace TestingPhase
     {
         private List<GatePass> gatePasses;
         private GateGuard gateGuard;
-
+        private Logs logs;
 
         public frmVisitorForm()
         {
@@ -155,6 +156,7 @@ namespace TestingPhase
             ClearForm();
 
             MessageBox.Show($"Your gatepass id is: {newGatePass.GatePassId}");
+            logs = new Logs(rootv.username, Environment.UserDomainName, $"{visitor.Name} request a gatepass with the gatepass id of {newGatePass.GatePassId} ", DateTime.Now);
         }
 
         private int InsertVisitorIntoDatabase(Visitor visitor)

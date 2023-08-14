@@ -148,7 +148,7 @@ namespace TestingPhase
 
             // Insert the GatePass into the database
             InsertGatePassIntoDatabase(newGatePass);
-
+            logs = new Logs(rootv.username, Environment.UserDomainName, $"{visitor.Name} request a gatepass id: {newGatePass.GatePassId} ", DateTime.Now);
             // Add the GatePass to the list
             gatePasses.Add(newGatePass);
 
@@ -156,7 +156,7 @@ namespace TestingPhase
             ClearForm();
 
             MessageBox.Show($"Your gatepass id is: {newGatePass.GatePassId}");
-            logs = new Logs(rootv.username, Environment.UserDomainName, $"{visitor.Name} request a gatepass with the gatepass id of {newGatePass.GatePassId} ", DateTime.Now);
+            
         }
 
         private int InsertVisitorIntoDatabase(Visitor visitor)

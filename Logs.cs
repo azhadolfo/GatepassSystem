@@ -18,18 +18,18 @@ namespace TestingPhase
         public DateTime date { get; set; }
 
         // Parameterized Constructor
-        public Logs(string? username, string computer, string activity, DateTime date)
+        public Logs(string username, string computer, string activity, DateTime date)
         {
             this.username = username;
             this.computer = computer;
-            this.activity = activity;
+            this.activity = activity.Trim();
             this.date = date;
 
             using (SqlConnection conn = new SqlConnection(rootv.ConnectionString))
             {
                 string query = "INSERT INTO tbllogs (username, computer, activity, date) VALUES (@username, @computer, @activity, @date)";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@username", string.IsNullOrEmpty(username) ? "N/A" : username);
                 cmd.Parameters.AddWithValue("@computer", computer);
                 cmd.Parameters.AddWithValue("@activity", activity);
                 cmd.Parameters.AddWithValue("@date", date);

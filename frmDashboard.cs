@@ -38,12 +38,14 @@ namespace TestingPhase
             else if (rootv.role == "validator") {
 
                 btnEmployees.Visible = false;
+                btnLogs.Visible = false;
                 SayWelcome(fname);
                 btnVisitor.Text = "Validate Visitor's Form";
             }
             else
             {
                 btnEmployees.Visible = false;
+                btnLogs.Visible = false;
                 SayWelcome(fname);
                 btnVisitor.Text = "Visitors Form";
             }

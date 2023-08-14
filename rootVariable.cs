@@ -36,7 +36,7 @@ namespace TestingPhase
 
         public static string role { get; set; }
 
-        public static string username { get; set; }
+        public static string username { get; set; } = "";
 
         public static bool isupdate { get; set; }
         public static bool isadd { get; set; }

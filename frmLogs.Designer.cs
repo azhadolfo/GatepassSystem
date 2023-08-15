@@ -33,15 +33,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tbllogsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.logs_DataSet = new TestingPhase.logs_DataSet();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbllogsTableAdapter = new TestingPhase.logs_DataSetTableAdapters.tbllogsTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.computerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbllogsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.logs_DataSet = new TestingPhase.logs_DataSet();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbllogsTableAdapter = new TestingPhase.logs_DataSetTableAdapters.tbllogsTableAdapter();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbllogsBindingSource)).BeginInit();
@@ -106,46 +106,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1026, 488);
             this.dataGridView1.TabIndex = 1;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // usernameDataGridViewTextBoxColumn
-            // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "USERNAME";
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.usernameDataGridViewTextBoxColumn.Width = 250;
-            // 
-            // computerDataGridViewTextBoxColumn
-            // 
-            this.computerDataGridViewTextBoxColumn.DataPropertyName = "computer";
-            this.computerDataGridViewTextBoxColumn.HeaderText = "COMPUTER";
-            this.computerDataGridViewTextBoxColumn.Name = "computerDataGridViewTextBoxColumn";
-            this.computerDataGridViewTextBoxColumn.ReadOnly = true;
-            this.computerDataGridViewTextBoxColumn.Width = 250;
-            // 
-            // activityDataGridViewTextBoxColumn
-            // 
-            this.activityDataGridViewTextBoxColumn.DataPropertyName = "activity";
-            this.activityDataGridViewTextBoxColumn.HeaderText = "ACTIVITY";
-            this.activityDataGridViewTextBoxColumn.Name = "activityDataGridViewTextBoxColumn";
-            this.activityDataGridViewTextBoxColumn.ReadOnly = true;
-            this.activityDataGridViewTextBoxColumn.Width = 250;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "DATE";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateDataGridViewTextBoxColumn.Width = 250;
-            // 
             // tbllogsBindingSource
             // 
             this.tbllogsBindingSource.DataMember = "tbllogs";
@@ -169,6 +129,48 @@
             // tbllogsTableAdapter
             // 
             this.tbllogsTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "USERNAME";
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.usernameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.usernameDataGridViewTextBoxColumn.Width = 250;
+            // 
+            // computerDataGridViewTextBoxColumn
+            // 
+            this.computerDataGridViewTextBoxColumn.DataPropertyName = "computer";
+            this.computerDataGridViewTextBoxColumn.HeaderText = "COMPUTER";
+            this.computerDataGridViewTextBoxColumn.Name = "computerDataGridViewTextBoxColumn";
+            this.computerDataGridViewTextBoxColumn.ReadOnly = true;
+            this.computerDataGridViewTextBoxColumn.Width = 250;
+            // 
+            // activityDataGridViewTextBoxColumn
+            // 
+            this.activityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.activityDataGridViewTextBoxColumn.DataPropertyName = "activity";
+            this.activityDataGridViewTextBoxColumn.HeaderText = "ACTIVITY";
+            this.activityDataGridViewTextBoxColumn.Name = "activityDataGridViewTextBoxColumn";
+            this.activityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.activityDataGridViewTextBoxColumn.Width = 5;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "DATE";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateDataGridViewTextBoxColumn.Width = 250;
             // 
             // frmLogs
             // 

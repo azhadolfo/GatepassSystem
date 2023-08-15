@@ -14,6 +14,7 @@ namespace TestingPhase
     {
         private GateGuard gateGuard;
         frmVisitorForm frmVisitorForm;
+        private Logs logs;
         public frmValidateVisitor()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace TestingPhase
             {
                 // Check the GatePass with the GateGuard
                 gateGuard.CheckGatePass(gatePass);
+                logs = new Logs(rootv.username, Environment.UserDomainName, $"{rootv.username} validated the gatepass {gatePass.GatePassId}", DateTime.Now);
             }
             else
             {

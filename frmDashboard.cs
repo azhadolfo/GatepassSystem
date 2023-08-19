@@ -194,5 +194,28 @@ namespace TestingPhase
                 logs.Show();
             }
         }
+
+        private void btnDms_Click(object sender, EventArgs e)
+        {
+            pnlDms.Visible = true;
+            bunifuButton1.Visible = false;
+            bunifuButton3.Visible = false;
+            bunifuButton5.Visible = false;
+        }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<frmLogs>().Count() == 1)
+            {
+                Application.OpenForms.OfType<frmLogs>().First().Close();
+                frmLogs logs = new frmLogs();
+                logs.Show();
+            }
+            else
+            {
+                frmLogs logs = new frmLogs();
+                logs.Show();
+            }
+        }
     }
 }

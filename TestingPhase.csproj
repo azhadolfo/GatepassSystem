@@ -69,6 +69,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
       <HintPath>..\..\..\..\Desktop\Azh Folder\Installer\BunifuCrack-main\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
+      <HintPath>..\..\..\..\Desktop\Azh Folder\Installer\BunifuCrack-main\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuPanel">
       <HintPath>..\..\..\..\Desktop\Azh Folder\Installer\BunifuCrack-main\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
     </Reference>
@@ -192,12 +195,6 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmVisitorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +206,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>logsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Main Form\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Form\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="msgOK.cs">
       <SubType>Form</SubType>
@@ -246,11 +249,11 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmVisitorForm.resx">
       <DependentUpon>frmVisitorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Form\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="msgOK.resx">
       <DependentUpon>msgOK.cs</DependentUpon>
@@ -380,6 +383,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\writing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pass %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile-user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />

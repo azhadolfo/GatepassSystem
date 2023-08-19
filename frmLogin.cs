@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestingPhase.Main_Form;
 
 namespace TestingPhase
 {
@@ -61,7 +62,7 @@ namespace TestingPhase
 
                         //if (rootv.isadmin == true)
                         //{
-                            frmDashboard dashboard = new frmDashboard(fname);
+                            frmMain dashboard = new frmMain(fname);
                             this.Hide();
                             dashboard.Show();
                         //}

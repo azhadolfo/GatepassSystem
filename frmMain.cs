@@ -13,13 +13,27 @@ namespace TestingPhase.Main_Form
 {
     public partial class frmMain : Form
     {
+        private frmAddEmployee AddEmployeeForm;
+        private frmDeleteEmployee DeleteEmployeeForm;
+        private frmViewEmployee ViewEmployeeForm;
+        private frmUpdateEmployee UpdateEmployeeForm;
+        private frmLogs LogsForm;
+        private frmVisitorForm VisitorForm;
+        private frmValidateVisitor ValidateVisitorsForm;
         string fname;
         public frmMain(string fname)
         {
             InitializeComponent();
             this.fname = fname;
+            AddEmployeeForm = new frmAddEmployee();
+            DeleteEmployeeForm = new frmDeleteEmployee();
+            ViewEmployeeForm = new frmViewEmployee();
+            UpdateEmployeeForm = new frmUpdateEmployee();
+            LogsForm = new frmLogs();
+            VisitorForm = new frmVisitorForm();
+            ValidateVisitorsForm = new frmValidateVisitor();
         }
-       
+        #region -- Gatepass Functions --
         private void OpenGatepassAdminModule()
         {
             btnAdd.Visible = true;
@@ -58,7 +72,7 @@ namespace TestingPhase.Main_Form
             {
                 // Hide the current form
                 this.Close();
-                CloseAllForms();
+                CloseAllGatepassForms();
 
                 // Show the login form
                 frmLogin frmLogin = new frmLogin();
@@ -68,17 +82,13 @@ namespace TestingPhase.Main_Form
             }
         }
 
-        private void CloseAllForms()
+        private void CloseAllGatepassForms()
         {
-            frmViewEmployee viewEmployee = new frmViewEmployee();
-            frmAddEmployee addEmployee = new frmAddEmployee();
-            frmUpdateEmployee updateEmployee = new frmUpdateEmployee();
-            frmDeleteEmployee deleteEmployee = new frmDeleteEmployee();
 
-            viewEmployee.Close();
-            addEmployee.Close();
-            updateEmployee.Close();
-            deleteEmployee.Close();
+            ViewEmployeeForm.Close();
+            AddEmployeeForm.Close();
+            UpdateEmployeeForm.Close();
+            DeleteEmployeeForm.Close();
 
         }
 
@@ -86,14 +96,12 @@ namespace TestingPhase.Main_Form
         {
             if (Application.OpenForms.OfType<frmViewEmployee>().Count() == 1)
             {
-                Application.OpenForms.OfType<frmViewEmployee>().First().Close();
-                frmViewEmployee viewEmployee = new frmViewEmployee();
-                viewEmployee.Show();
+                Application.OpenForms.OfType<frmViewEmployee>().First().BringToFront();
+                ViewEmployeeForm.Show();
             }
             else
             {
-                frmViewEmployee viewEmployee = new frmViewEmployee();
-                viewEmployee.Show();
+                ViewEmployeeForm.Show();
             }
         }
 
@@ -101,14 +109,12 @@ namespace TestingPhase.Main_Form
         {
             if (Application.OpenForms.OfType<frmAddEmployee>().Count() == 1)
             {
-                Application.OpenForms.OfType<frmAddEmployee>().First().Close();
-                frmAddEmployee addEmployee = new frmAddEmployee();
-                addEmployee.Show();
+                Application.OpenForms.OfType<frmAddEmployee>().First().BringToFront();
+                AddEmployeeForm.Show();
             }
             else
             {
-                frmAddEmployee addEmployee = new frmAddEmployee();
-                addEmployee.Show();
+                AddEmployeeForm.Show();
             }
         }
 
@@ -116,14 +122,12 @@ namespace TestingPhase.Main_Form
         {
             if (Application.OpenForms.OfType<frmUpdateEmployee>().Count() == 1)
             {
-                Application.OpenForms.OfType<frmUpdateEmployee>().First().Close();
-                frmUpdateEmployee updateEmployee = new frmUpdateEmployee();
-                updateEmployee.Show();
+                Application.OpenForms.OfType<frmUpdateEmployee>().First().BringToFront();
+                UpdateEmployeeForm.Show();
             }
             else
             {
-                frmUpdateEmployee updateEmployee = new frmUpdateEmployee();
-                updateEmployee.Show();
+                UpdateEmployeeForm.Show();
             }
         }
 
@@ -131,14 +135,12 @@ namespace TestingPhase.Main_Form
         {
             if (Application.OpenForms.OfType<frmDeleteEmployee>().Count() == 1)
             {
-                Application.OpenForms.OfType<frmDeleteEmployee>().First().Close();
-                frmDeleteEmployee deleteEmployee = new frmDeleteEmployee();
-                deleteEmployee.Show();
+                Application.OpenForms.OfType<frmDeleteEmployee>().First().BringToFront();
+                DeleteEmployeeForm.Show();
             }
             else
             {
-                frmDeleteEmployee deleteEmployee = new frmDeleteEmployee();
-                deleteEmployee.Show();
+                DeleteEmployeeForm.Show();
             }
         }
 
@@ -152,23 +154,59 @@ namespace TestingPhase.Main_Form
             btnUser.Text = fname;
         }
 
+        #endregion
+
         private void frmMain_Load(object sender, EventArgs e)
         {
             if (rootv.role == "admin")
             {
-                btnLogout.Text = "Admin";
-                btnVisitor.Text = "Validate Visitor's Form";
+                btnUser.Text = "Admin";
+                btnVisitor.Text = "Validate Visitor's";
 
 
             }
             else if (rootv.role == "validator")
             {
        
-                btnVisitor.Text = "Validate Visitor's Form";
+                btnVisitor.Text = "Validate Visitor's";
+                btnLogs.Visible = false;
             }
             else
             {
                 btnVisitor.Text = "Visitors Form";
+                btnLogs.Visible = false;
+            }
+        }
+
+        private void btnLogs_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<frmLogs>().Count() == 1)
+            {
+                Application.OpenForms.OfType<frmLogs>().First().BringToFront();
+                LogsForm.Show();
+            }
+            else
+            {
+                LogsForm.Show();
+            }
+        }
+
+        private void btnDms_Click(object sender, EventArgs e)
+        {
+            CloseGatepassButton();
+            CloseAllGatepassForms();
+        }
+
+        private void btnVisitor_Click(object sender, EventArgs e)
+        {
+            if (rootv.role == "admin" || rootv.role == "validator")
+            {
+
+                ValidateVisitorsForm.ShowDialog();
+            }
+            else
+            {
+                VisitorForm.ShowDialog();
             }
         }
     }

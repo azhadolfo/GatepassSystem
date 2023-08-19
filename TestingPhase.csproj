@@ -207,10 +207,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>logsDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Main Form\frmMain.cs">
+    <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main Form\frmMain.Designer.cs">
+    <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="msgOK.cs">
@@ -252,7 +252,7 @@
     <EmbeddedResource Include="frmVisitorForm.resx">
       <DependentUpon>frmVisitorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main Form\frmMain.resx">
+    <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="msgOK.resx">
@@ -392,6 +392,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />

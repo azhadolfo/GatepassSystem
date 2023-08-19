@@ -36,7 +36,9 @@
             this.btnUser = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.btnGatepass = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnLogs = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnVisitor = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -85,7 +87,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnDms,
             this.btnUser,
-            this.btnGatepass});
+            this.btnGatepass,
+            this.btnLogs});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(886, 60);
@@ -94,6 +97,8 @@
             // 
             // btnDms
             // 
+            this.btnDms.Checked = true;
+            this.btnDms.CheckState = System.Windows.Forms.CheckState.Checked;
             this.btnDms.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDms.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.btnDms.Image = global::TestingPhase.Properties.Resources.folder;
@@ -101,6 +106,7 @@
             this.btnDms.Name = "btnDms";
             this.btnDms.Size = new System.Drawing.Size(221, 56);
             this.btnDms.Text = "Document Management";
+            this.btnDms.Click += new System.EventHandler(this.btnDms_Click);
             // 
             // btnUser
             // 
@@ -137,9 +143,21 @@
             this.btnGatepass.Text = "GATEPASS";
             this.btnGatepass.Click += new System.EventHandler(this.btnGatepass_Click);
             // 
+            // btnLogs
+            // 
+            this.btnLogs.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
+            this.btnLogs.Image = global::TestingPhase.Properties.Resources.file__1_;
+            this.btnLogs.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnLogs.Name = "btnLogs";
+            this.btnLogs.Size = new System.Drawing.Size(91, 56);
+            this.btnLogs.Text = "LOGS";
+            this.btnLogs.Click += new System.EventHandler(this.btnLogs_Click);
+            // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(147)))), ((int)(((byte)(151)))));
+            this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.btnVisitor);
             this.panelMenu.Controls.Add(this.btnDelete);
             this.panelMenu.Controls.Add(this.btnUpdate);
@@ -151,6 +169,26 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 692);
             this.panelMenu.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
+            this.button1.Image = global::TestingPhase.Properties.Resources.approved;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 360);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(220, 60);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Visitor\'s Form";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             // 
             // btnVisitor
             // 
@@ -171,6 +209,7 @@
             this.btnVisitor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVisitor.UseVisualStyleBackColor = true;
             this.btnVisitor.Visible = false;
+            this.btnVisitor.Click += new System.EventHandler(this.btnVisitor_Click);
             // 
             // btnDelete
             // 
@@ -325,5 +364,7 @@
         private System.Windows.Forms.ToolStripMenuItem btnUser;
         private System.Windows.Forms.ToolStripMenuItem btnLogout;
         private System.Windows.Forms.ToolStripMenuItem btnGatepass;
+        private System.Windows.Forms.ToolStripMenuItem btnLogs;
+        private System.Windows.Forms.Button button1;
     }
 }

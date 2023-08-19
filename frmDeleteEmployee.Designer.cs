@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDeleteEmployee));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.table_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.table_username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.table_first_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.table_last_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.table_last_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.table_first_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.table_username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.table_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -66,10 +66,27 @@
             this.panel1.Size = new System.Drawing.Size(1061, 425);
             this.panel1.TabIndex = 5;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(938, 374);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(99, 42);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -102,21 +119,34 @@
             this.dataGridView1.Size = new System.Drawing.Size(1021, 351);
             this.dataGridView1.TabIndex = 1;
             // 
-            // btnDelete
+            // table_id
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(53)))), ((int)(((byte)(55)))));
-            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(938, 374);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(99, 42);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.table_id.HeaderText = "ID";
+            this.table_id.Name = "table_id";
+            // 
+            // table_username
+            // 
+            this.table_username.HeaderText = "USERNAME";
+            this.table_username.Name = "table_username";
+            this.table_username.Width = 200;
+            // 
+            // table_first_name
+            // 
+            this.table_first_name.HeaderText = "FIRST NAME";
+            this.table_first_name.Name = "table_first_name";
+            this.table_first_name.Width = 300;
+            // 
+            // table_last_name
+            // 
+            this.table_last_name.HeaderText = "LAST NAME";
+            this.table_last_name.Name = "table_last_name";
+            this.table_last_name.Width = 300;
+            // 
+            // Select
+            // 
+            this.Select.HeaderText = "";
+            this.Select.Name = "Select";
+            this.Select.Width = 78;
             // 
             // txtSearch
             // 
@@ -139,35 +169,6 @@
             this.label1.Size = new System.Drawing.Size(78, 33);
             this.label1.TabIndex = 6;
             this.label1.Text = "Search";
-            // 
-            // Select
-            // 
-            this.Select.HeaderText = "";
-            this.Select.Name = "Select";
-            this.Select.Width = 78;
-            // 
-            // table_last_name
-            // 
-            this.table_last_name.HeaderText = "LAST NAME";
-            this.table_last_name.Name = "table_last_name";
-            this.table_last_name.Width = 300;
-            // 
-            // table_first_name
-            // 
-            this.table_first_name.HeaderText = "FIRST NAME";
-            this.table_first_name.Name = "table_first_name";
-            this.table_first_name.Width = 300;
-            // 
-            // table_username
-            // 
-            this.table_username.HeaderText = "USERNAME";
-            this.table_username.Name = "table_username";
-            this.table_username.Width = 200;
-            // 
-            // table_id
-            // 
-            this.table_id.HeaderText = "ID";
-            this.table_id.Name = "table_id";
             // 
             // frmDeleteEmployee
             // 

@@ -1,4 +1,5 @@
 ﻿using System;
+using Npgsql;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -163,13 +164,13 @@ namespace TestingPhase
         {
             int visitorId = 0;
 
-            using (SqlConnection connection = new SqlConnection(rootv.ConnectionString))
+            using (NpgsqlConnection connection = new NpgsqlConnection(rootv.ConnectionString))
             {
                 string query = "INSERT INTO tblvisitors (Name, ContactNo, Address, PurposeOfVisit) " +
                                "VALUES (@Name, @ContactNo, @Address, @PurposeOfVisit); " +
                                "SELECT SCOPE_IDENTITY();";
 
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Name", visitor.Name);
                     command.Parameters.AddWithValue("@ContactNo", visitor.ContactNo);
@@ -186,12 +187,12 @@ namespace TestingPhase
 
         private void InsertGatePassIntoDatabase(GatePass gatePass)
         {
-            using (SqlConnection connection = new SqlConnection(rootv.ConnectionString))
+            using (NpgsqlConnection connection = new NpgsqlConnection(rootv.ConnectionString))
             {
                 string query = "INSERT INTO tblgatepass (GatePassId, VisitorId, EmployeeId, IssueDate, ExpiryDate) " +
                                "VALUES (@GatePassId, @VisitorId, @EmployeeId, @IssueDate, @ExpiryDate);";
 
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@GatePassId", gatePass.GatePassId);
                     command.Parameters.AddWithValue("@VisitorId", gatePass.VisitorId);
@@ -243,17 +244,17 @@ namespace TestingPhase
         {
             GatePass gatePass = null;
 
-            using (SqlConnection connection = new SqlConnection(rootv.ConnectionString))
+            using (NpgsqlConnection connection = new NpgsqlConnection(rootv.ConnectionString))
             {
                 string query = "SELECT GatePassId, VisitorId, EmployeeId, IssueDate, ExpiryDate FROM tblgatepass WHERE GatePassId = @GatePassId";
 
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@GatePassId", gatePassId);
 
                     connection.Open();
 
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    using (NpgsqlDataReader reader = command.ExecuteReader())
                     {
                         if (reader.Read())
                         {

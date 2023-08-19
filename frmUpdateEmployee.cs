@@ -31,7 +31,7 @@ namespace TestingPhase
             //Sql Injection Vulnerable
             //try { 
             //var username = txtUsername.Text;
-            //query = $"SELECT * FROM tblemployee WHERE username = {username}";
+            //query = $"SELECT * FROM userfile WHERE username = {username}";
             //ds = root.GetData(query);
             //if (ds != null && ds.Tables[0].Rows.Count != 0)
             //{
@@ -106,7 +106,7 @@ namespace TestingPhase
             //    var lname = txtLastname.Text;
 
             //    // Use parameterized query to prevent SQL injection
-            //    query = "UPDATE tblemployee SET first_name = @fname, last_name = @lname WHERE id = @username";
+            //    query = "UPDATE userfile SET first_name = @fname, last_name = @lname WHERE id = @username";
             //    root.AddParameter("@fname", fname);
             //    root.AddParameter("@lname", lname);
             //    root.AddParameter("@username", username);

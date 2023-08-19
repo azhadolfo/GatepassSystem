@@ -2,13 +2,21 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TestingPhase.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
+    <Setting Name="ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Dsn=PostgreSQL35W;uid=postgres;pwd=mis123&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.Odbc&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Dsn=PostgreSQL35W;uid=postgres;pwd=mis123</Value>
+    </Setting>
     <Setting Name="cs_crudConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionString&gt;Data Source=192.168.0.251;Initial Catalog=cs_crud;Persist Security Info=True;User ID=user3;Password=twainc.&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+  &lt;ConnectionString&gt;Driver={PostgreSQL UNICODE};Server=localhost;Port=5432;Database=cs_crud;Uid=postgres;Pwd=mis123;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.Odbc&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=192.168.0.251;Initial Catalog=cs_crud;Persist Security Info=True;User ID=user3;Password=twainc.</Value>
+      <Value Profile="(Default)">Driver={PostgreSQL UNICODE};Server=localhost;Port=5432;Database=cs_crud;Uid=postgres;Pwd=mis123;</Value>
     </Setting>
   </Settings>
 </SettingsFile>

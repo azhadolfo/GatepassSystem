@@ -1,4 +1,5 @@
 ﻿using System;
+using Npgsql;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,11 +34,11 @@ namespace TestingPhase
         {
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
-            string query = "SELECT * FROM tblemployee";
-            using (SqlConnection conn = new SqlConnection(rootv.ConnectionString))
+            string query = "SELECT * FROM userfile";
+            using (NpgsqlConnection conn = new NpgsqlConnection(rootv.ConnectionString))
             {
-                SqlCommand cmd = new SqlCommand(query, conn);
-                SqlDataReader rdr;
+                NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+                NpgsqlDataReader rdr;
 
                 try
                 {
@@ -48,7 +49,7 @@ namespace TestingPhase
                     {
                         string fname = rdr.IsDBNull(1) ? string.Empty : rdr.GetString(1).Trim();
                         string lname = rdr.IsDBNull(2) ? string.Empty : rdr.GetString(2).Trim();
-                        string username = rdr.IsDBNull(4) ? string.Empty : rdr.GetString(4).Trim();
+                        string username = rdr.IsDBNull(3) ? string.Empty : rdr.GetString(3).Trim();
 
                         dataGridView1.Rows.Add(username, fname, lname);
                     }
@@ -76,12 +77,12 @@ namespace TestingPhase
             dataGridView1.Rows.Clear();
 
             // Query the database based on the search term (username, firstname, lastname)
-            string query = "SELECT * FROM tblemployee WHERE username LIKE @term OR first_name LIKE @term OR last_name LIKE @term";
-            using (SqlConnection conn = new SqlConnection(rootv.ConnectionString))
+            string query = "SELECT * FROM userfile WHERE username LIKE @term OR first_name LIKE @term OR last_name LIKE @term";
+            using (NpgsqlConnection conn = new NpgsqlConnection(rootv.ConnectionString))
             {
-                SqlCommand cmd = new SqlCommand(query, conn);
+                NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@term", $"%{searchTerm}%");
-                SqlDataReader rdr;
+                NpgsqlDataReader rdr;
 
                 try
                 {

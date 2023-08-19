@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -93,32 +94,32 @@ namespace TestingPhase
             DataTable dataTable = new DataTable();
             string hashedPassword = PasswordHasher.HashPassword(txtPassword.Text);
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
-                try
-                {
+                //try
+                //{
                     // Open the connection
                     connection.Open();
 
                     // Here is the query
-                    string query = "SELECT * FROM tblemployee WHERE username = @username AND password = @password";
+                    string query = "SELECT * FROM userfile WHERE username = @username AND password = @password";
 
                     // Create the SqlCommand object
-                    SqlCommand command = new SqlCommand(query, connection);
+                    NpgsqlCommand command = new NpgsqlCommand(query, connection);
                     command.Parameters.AddWithValue("username", txtUsername.Text);
                     command.Parameters.AddWithValue("password", hashedPassword);
 
                     // Create a SqlDataAdapter to execute the command and fill the DataTable
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+                    NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(command);
 
                     // Fill the DataTable with data from the database
                     dataAdapter.Fill(dataTable);
-                }
-                catch (Exception ex)
-                {
-                    // Handle any exceptions that occur during the execution
-                    MessageBox.Show("Error :", ex.Message);
-                }
+                //}
+                //catch (Exception ex)
+                //{
+                //    // Handle any exceptions that occur during the execution
+                //    MessageBox.Show("Error :", ex.Message);
+                //}
             }
 
 

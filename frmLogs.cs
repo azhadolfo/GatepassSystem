@@ -19,8 +19,8 @@ namespace TestingPhase
 
         private void frmLogs_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'logs_DataSet.tbllogs' table. You can move, or remove it, as needed.
-            this.tbllogsTableAdapter.Fill(this.logs_DataSet.tbllogs);
+            // TODO: This line of code loads data into the 'logsDataSet.logs' table. You can move, or remove it, as needed.
+            this.logsTableAdapter.Fill(this.logsDataSet.logs);
 
         }
     }

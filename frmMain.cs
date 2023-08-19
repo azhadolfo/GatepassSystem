@@ -1,4 +1,5 @@
 ﻿using System;
+using Npgsql;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,11 +27,11 @@ namespace TestingPhase
         {
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
-            string query = "SELECT * FROM tblemployee";
-            using (SqlConnection conn = new SqlConnection(rootv.ConnectionString))
+            string query = "SELECT * FROM userfile";
+            using (NpgsqlConnection conn = new NpgsqlConnection(rootv.ConnectionString))
             { 
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataReader rdr;
+            NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+            NpgsqlDataReader rdr;
 
             try
             {
@@ -61,10 +62,10 @@ namespace TestingPhase
         #region -- Update Data Function --
         private void UpdateData()
         {
-            using (SqlConnection conn = new SqlConnection(rootv.ConnectionString))
+            using (NpgsqlConnection conn = new NpgsqlConnection(rootv.ConnectionString))
             {
-                string query = "UPDATE tblemployee SET first_name = @fname, last_name = @lname WHERE id = @id";
-                SqlCommand cmd = new SqlCommand(query, conn);
+                string query = "UPDATE userfile SET first_name = @fname, last_name = @lname WHERE id = @id";
+                NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("id", txtId.Text);
                 cmd.Parameters.AddWithValue("fname", txtFirstName.Text);
                 cmd.Parameters.AddWithValue("lname", txtLastName.Text);
@@ -91,10 +92,10 @@ namespace TestingPhase
         #region -- Delete Data Function --
         private void DeleteData()
         {
-            using (SqlConnection conn = new SqlConnection(rootv.ConnectionString))
+            using (NpgsqlConnection conn = new NpgsqlConnection(rootv.ConnectionString))
             {
-                string query = "DELETE FROM tblemployee WHERE id = @id";
-                SqlCommand cmd = new SqlCommand(query, conn);
+                string query = "DELETE FROM userfile WHERE id = @id";
+                NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("id", txtId.Text);
 
 
@@ -119,10 +120,10 @@ namespace TestingPhase
         private void AddData()
         {
 
-            using (SqlConnection conn = new SqlConnection(rootv.ConnectionString))
+            using (NpgsqlConnection conn = new NpgsqlConnection(rootv.ConnectionString))
             {
-                string query = "INSERT INTO tblemployee (first_name,last_name) VALUES (@fname, @lname)";
-                SqlCommand cmd = new SqlCommand(query, conn);
+                string query = "INSERT INTO userfile (first_name,last_name) VALUES (@fname, @lname)";
+                NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("fname", txtFirstName.Text);
                 cmd.Parameters.AddWithValue("lname", txtLastName.Text);
 
@@ -180,7 +181,7 @@ namespace TestingPhase
         //            connection.Open();
 
         //            // Here is the query
-        //            string query = "SELECT * FROM tblemployee";
+        //            string query = "SELECT * FROM userfile";
 
         //            // Create the SqlCommand object
         //            SqlCommand command = new SqlCommand(query, connection);
@@ -233,7 +234,7 @@ namespace TestingPhase
         //            connection.Open();
 
         //            // Here is the query
-        //            string query = "INSERT INTO tblemployee (first_name,last_name)VALUES(@first_name,@last_name)";
+        //            string query = "INSERT INTO userfile (first_name,last_name)VALUES(@first_name,@last_name)";
 
         //            // Create the SqlCommand object
         //            SqlCommand command = new SqlCommand(query, connection);

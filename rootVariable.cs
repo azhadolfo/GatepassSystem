@@ -8,6 +8,7 @@ using System.Data;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Security.Policy;
+using Npgsql;
 
 namespace TestingPhase
 {
@@ -17,20 +18,21 @@ namespace TestingPhase
 
        //public static string CONNECTION_STR {  get; set; } = "Data Source=WIN-IU3ACLEQUUI;Initial Catalog=cs_crud;Persist Security Info=True;User ID=user3;Password=twainc.";
 
+     
     }
 
-    class rootv
+    public class rootv
     {
         msgOK msgOK = new msgOK();
 
-        public static string ConnectionString { get; set; } = "Data Source=WIN-IU3ACLEQUUI;Initial Catalog=cs_crud;Persist Security Info=True;User ID=user3;Password=twainc.";
+        public static string ConnectionString { get; set; } = "Host=localhost;Username=postgres;Password=mis123;Database=cs_crud";
 
-        public static SqlConnection SqlConnection { get; set; } = new SqlConnection(ConnectionString);
+        public static NpgsqlConnection NpgsqlConnection { get; set; } = new NpgsqlConnection(ConnectionString);
 
-        protected SqlConnection GetConnection()
+        protected NpgsqlConnection GetConnection()
         {
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = "Data Source=WIN-IU3ACLEQUUI;Initial Catalog=cs_crud;Persist Security Info=True;User ID=user3;Password=twainc.";
+            NpgsqlConnection connection = new NpgsqlConnection();
+            connection.ConnectionString = "Host=localhost;Username=postgres;Password=1234;Database=cs_crud";
             return connection;
         }
 
@@ -51,11 +53,11 @@ namespace TestingPhase
             DataSet ds = new DataSet();
             try
             {
-                SqlConnection connection = GetConnection();
-                SqlCommand cmd = new SqlCommand();
+                NpgsqlConnection connection = GetConnection();
+                NpgsqlCommand cmd = new NpgsqlCommand();
                 cmd.Connection = connection;
                 cmd.CommandText = query;
-                SqlDataAdapter adapter = new SqlDataAdapter();
+                NpgsqlDataAdapter adapter = new NpgsqlDataAdapter();
                 adapter.SelectCommand = cmd; // Set the SelectCommand property
                 adapter.Fill(ds);
             }
@@ -74,8 +76,8 @@ namespace TestingPhase
         {
             try
             {
-                SqlConnection connection = GetConnection();
-                SqlCommand cmd = new SqlCommand();
+                NpgsqlConnection connection = GetConnection();
+                NpgsqlCommand cmd = new NpgsqlCommand();
                 cmd.Connection = connection;
                 connection.Open();
                 cmd.CommandText = query;
@@ -100,10 +102,10 @@ namespace TestingPhase
         {
             string hashedPassword = PasswordHasher.HashPassword(password);
 
-            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            using (NpgsqlConnection conn = new NpgsqlConnection(ConnectionString))
             {
-                string query = "INSERT INTO tblemployee (first_name, last_name, username, password, role) VALUES (@fname, @lname, @username, @password, @role)";
-                SqlCommand cmd = new SqlCommand(query, conn);
+                string query = "INSERT INTO userfile (first_name, last_name, username, password, role) VALUES (@fname, @lname, @username, @password, @role)";
+                NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@fname", fname);
                 cmd.Parameters.AddWithValue("@lname", lname);
                 cmd.Parameters.AddWithValue("@username", username);
@@ -154,10 +156,10 @@ namespace TestingPhase
         #region -- Update Data Function --
         public void UpdateData(string username, string fname, string lname)
         {
-            using (SqlConnection conn = new SqlConnection(rootv.ConnectionString))
+            using (NpgsqlConnection conn = new NpgsqlConnection(rootv.ConnectionString))
             {
-                string query = "UPDATE tblemployee SET first_name = @fname, last_name = @lname WHERE username = @username";
-                SqlCommand cmd = new SqlCommand(query, conn);
+                string query = "UPDATE userfile SET first_name = @fname, last_name = @lname WHERE username = @username";
+                NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@fname", fname);
                 cmd.Parameters.AddWithValue("@lname", lname);
@@ -190,12 +192,12 @@ namespace TestingPhase
         public DataTable GetDataByUsername(string username)
         {
             DataTable dt = new DataTable();
-            string query = "SELECT * FROM tblemployee WHERE username = @username";
-            using (SqlConnection conn = new SqlConnection(rootv.ConnectionString))
+            string query = "SELECT * FROM userfile WHERE username = @username";
+            using (NpgsqlConnection conn = new NpgsqlConnection(rootv.ConnectionString))
             {
-                SqlCommand cmd = new SqlCommand(query, conn);
+                NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@username", username);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                NpgsqlDataAdapter da = new NpgsqlDataAdapter(cmd);
 
                 try
                 {
@@ -216,10 +218,10 @@ namespace TestingPhase
         #region -- Delete Data Function --
         public void DeleteData(int id)
         {
-            using (SqlConnection conn = new SqlConnection(rootv.ConnectionString))
+            using (NpgsqlConnection conn = new NpgsqlConnection(rootv.ConnectionString))
             {
-                string query = "DELETE FROM tblemployee WHERE id = @id";
-                SqlCommand cmd = new SqlCommand(query, conn);
+                string query = "DELETE FROM userfile WHERE id = @id";
+                NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id", id);
 
 
@@ -244,7 +246,7 @@ namespace TestingPhase
         //{
         //    using (SqlConnection conn = new SqlConnection(rootv.ConnectionString))
         //    {
-        //        string query = "DELETE FROM tblemployee WHERE id IN (@ids)";
+        //        string query = "DELETE FROM userfile WHERE id IN (@ids)";
         //        SqlCommand cmd = new SqlCommand(query, conn);
 
         //        // Use SqlParameter to pass the list of ids as a parameter

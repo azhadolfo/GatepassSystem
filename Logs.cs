@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using Npgsql;
 
 namespace TestingPhase
 {
@@ -25,10 +26,10 @@ namespace TestingPhase
             this.activity = activity.Trim();
             this.date = date;
 
-            using (SqlConnection conn = new SqlConnection(rootv.ConnectionString))
+            using (NpgsqlConnection conn = new NpgsqlConnection(rootv.ConnectionString))
             {
-                string query = "INSERT INTO tbllogs (username, computer, activity, date) VALUES (@username, @computer, @activity, @date)";
-                SqlCommand cmd = new SqlCommand(query, conn);
+                string query = "INSERT INTO logs (username, computer, activity, date) VALUES (@username, @computer, @activity, @date)";
+                NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@username", string.IsNullOrEmpty(username) ? "N/A" : username);
                 cmd.Parameters.AddWithValue("@computer", computer);
                 cmd.Parameters.AddWithValue("@activity", activity);

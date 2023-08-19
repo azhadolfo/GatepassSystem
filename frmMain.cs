@@ -43,17 +43,14 @@ namespace TestingPhase.Main_Form
             btnVisitor.Visible = true;
         }
 
-        private void CloseGatepassButton()
+        private void CloseGatepassModules()
         {
-            btnAdd.Visible = false;
-            btnDelete.Visible = false;
-            btnView.Visible = false;
-            btnUpdate.Visible = false;
             btnVisitor.Visible = false;
         }
 
         private void btnGatepass_Click(object sender, EventArgs e)
         {
+            CloseDmsModules();
             if (rootv.role == "admin")
             {
                 OpenGatepassAdminModule();
@@ -146,12 +143,20 @@ namespace TestingPhase.Main_Form
 
         private void OpenGatepassUserModule()
         {
-            btnAdd.Visible = false;
-            btnDelete.Visible = false;
-            btnView.Visible = false;
-            btnUpdate.Visible = false;
             btnVisitor.Visible = true;
             btnUser.Text = fname;
+        }
+        private void btnVisitor_Click(object sender, EventArgs e)
+        {
+            if (rootv.role == "admin" || rootv.role == "validator")
+            {
+
+                ValidateVisitorsForm.ShowDialog();
+            }
+            else
+            {
+                VisitorForm.ShowDialog();
+            }
         }
 
         #endregion
@@ -191,23 +196,26 @@ namespace TestingPhase.Main_Form
             }
         }
 
+        #region -- Document Management System --
         private void btnDms_Click(object sender, EventArgs e)
         {
-            CloseGatepassButton();
-            CloseAllGatepassForms();
+            CloseGatepassModules();
+            OpenDmsModules();
         }
 
-        private void btnVisitor_Click(object sender, EventArgs e)
+        private void OpenDmsModules()
         {
-            if (rootv.role == "admin" || rootv.role == "validator")
-            {
-
-                ValidateVisitorsForm.ShowDialog();
-            }
-            else
-            {
-                VisitorForm.ShowDialog();
-            }
+            btnUploadFile.Visible = true;
+            btnDownloadFile.Visible = true;
         }
+
+        private void CloseDmsModules()
+        {
+            btnUploadFile.Visible = false;
+            btnDownloadFile.Visible = false;
+        }
+
+
+        #endregion
     }
 }

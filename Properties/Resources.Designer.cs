@@ -283,6 +283,16 @@ namespace TestingPhase.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap multiple_users_silhouette1 {
+            get {
+                object obj = ResourceManager.GetObject("multiple-users-silhouette1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pass__1_ {
             get {
                 object obj = ResourceManager.GetObject("pass (1)", resourceCulture);

@@ -12,7 +12,7 @@ namespace TestingPhase
 {
     public partial class frmValidateVisitor : Form
     {
-        private GateGuard gateGuard;
+        private readonly GateGuard gateGuard;
         frmVisitorForm frmVisitorForm;
         private Logs logs;
         public frmValidateVisitor()

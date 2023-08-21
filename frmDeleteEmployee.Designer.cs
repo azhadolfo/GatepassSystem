@@ -207,6 +207,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn table_username;
         private System.Windows.Forms.DataGridViewTextBoxColumn table_first_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn table_last_name;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Select;
+        private new System.Windows.Forms.DataGridViewCheckBoxColumn Select;
     }
 }

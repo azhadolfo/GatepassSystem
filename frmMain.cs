@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using TestingPhase.Document_Management;
 
 namespace TestingPhase.Main_Form
 {
@@ -20,6 +21,7 @@ namespace TestingPhase.Main_Form
         private frmLogs LogsForm;
         private frmVisitorForm VisitorForm;
         private frmValidateVisitor ValidateVisitorsForm;
+        private UploadFile UploadFileForm;
         string fname;
         public frmMain(string fname)
         {
@@ -32,6 +34,7 @@ namespace TestingPhase.Main_Form
             LogsForm = new frmLogs();
             VisitorForm = new frmVisitorForm();
             ValidateVisitorsForm = new frmValidateVisitor();
+            UploadFileForm = new UploadFile();
         }
         #region -- Gatepass Functions --
         private void OpenGatepassAdminModule()
@@ -51,6 +54,7 @@ namespace TestingPhase.Main_Form
         private void btnGatepass_Click(object sender, EventArgs e)
         {
             CloseDmsModules();
+            panelMain.Controls.Clear();
             if (rootv.role == "admin")
             {
                 OpenGatepassAdminModule();
@@ -215,7 +219,20 @@ namespace TestingPhase.Main_Form
             btnDownloadFile.Visible = false;
         }
 
+        private void btnUploadFile_Click(object sender, EventArgs e)
+        {
+            addUserControl(UploadFileForm);
+        }
+
+        private void addUserControl(UserControl userControl)
+        {
+            userControl.Dock = DockStyle.Fill;
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(userControl);
+        }
 
         #endregion
+
+
     }
 }

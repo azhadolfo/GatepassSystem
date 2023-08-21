@@ -106,8 +106,8 @@ namespace TestingPhase
 
     public partial class frmVisitorForm : Form
     {
-        private List<GatePass> gatePasses;
-        private GateGuard gateGuard;
+        private readonly List<GatePass> gatePasses;
+        private readonly GateGuard gateGuard;
         private Logs logs;
 
         public frmVisitorForm()

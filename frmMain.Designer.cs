@@ -48,6 +48,7 @@
             this.btnVisitor = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.bunifuPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -63,6 +64,7 @@
             this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuPanel1.BorderRadius = 3;
             this.bunifuPanel1.BorderThickness = 1;
+            this.bunifuPanel1.Controls.Add(this.panelMain);
             this.bunifuPanel1.Controls.Add(this.panel1);
             this.bunifuPanel1.Controls.Add(this.panelMenu);
             this.bunifuPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -267,6 +269,7 @@
             this.btnUploadFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUploadFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUploadFile.UseVisualStyleBackColor = true;
+            this.btnUploadFile.Click += new System.EventHandler(this.btnUploadFile_Click);
             // 
             // btnVisitor
             // 
@@ -315,6 +318,15 @@
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
+            // panelMain
+            // 
+            this.panelMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(220, 60);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(886, 632);
+            this.panelMain.TabIndex = 2;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -362,5 +374,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnAdd;
         private System.Windows.Forms.ToolStripMenuItem btnUpdate;
         private System.Windows.Forms.ToolStripMenuItem btnDelete;
+        private System.Windows.Forms.Panel panelMain;
     }
 }

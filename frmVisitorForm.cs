@@ -166,9 +166,10 @@ namespace TestingPhase
 
             using (NpgsqlConnection connection = new NpgsqlConnection(rootv.ConnectionString))
             {
-                string query = "INSERT INTO tblvisitors (Name, ContactNo, Address, PurposeOfVisit) " +
-                               "VALUES (@Name, @ContactNo, @Address, @PurposeOfVisit); " +
-                               "SELECT SCOPE_IDENTITY();";
+                string query = "INSERT INTO visitors (Name, ContactNo, Address, PurposeOfVisit) " +
+               "VALUES (@Name, @ContactNo, @Address, @PurposeOfVisit) " +
+               "RETURNING id;";
+
 
                 using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                 {
@@ -189,7 +190,7 @@ namespace TestingPhase
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(rootv.ConnectionString))
             {
-                string query = "INSERT INTO tblgatepass (GatePassId, VisitorId, EmployeeId, IssueDate, ExpiryDate) " +
+                string query = "INSERT INTO gatepass (GatePassId, VisitorId, EmployeeId, IssueDate, ExpiryDate) " +
                                "VALUES (@GatePassId, @VisitorId, @EmployeeId, @IssueDate, @ExpiryDate);";
 
                 using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
@@ -246,7 +247,7 @@ namespace TestingPhase
 
             using (NpgsqlConnection connection = new NpgsqlConnection(rootv.ConnectionString))
             {
-                string query = "SELECT GatePassId, VisitorId, EmployeeId, IssueDate, ExpiryDate FROM tblgatepass WHERE GatePassId = @GatePassId";
+                string query = "SELECT GatePassId, VisitorId, EmployeeId, IssueDate, ExpiryDate FROM gatepass WHERE GatePassId = @GatePassId";
 
                 using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                 {

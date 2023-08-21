@@ -133,7 +133,7 @@
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(196, 38);
+            this.btnLogout.Size = new System.Drawing.Size(158, 38);
             this.btnLogout.Text = "Sign Out";
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
@@ -171,7 +171,7 @@
             this.btnView.Image = ((System.Drawing.Image)(resources.GetObject("btnView.Image")));
             this.btnView.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(196, 38);
+            this.btnView.Size = new System.Drawing.Size(148, 38);
             this.btnView.Text = "View";
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
@@ -181,7 +181,7 @@
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(196, 38);
+            this.btnAdd.Size = new System.Drawing.Size(148, 38);
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -191,7 +191,7 @@
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(196, 38);
+            this.btnUpdate.Size = new System.Drawing.Size(148, 38);
             this.btnUpdate.Text = "Update";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -201,7 +201,7 @@
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(196, 38);
+            this.btnDelete.Size = new System.Drawing.Size(148, 38);
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -237,7 +237,7 @@
             this.btnDownloadFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDownloadFile.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDownloadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.btnDownloadFile.Image = global::TestingPhase.Properties.Resources.approved;
+            this.btnDownloadFile.Image = global::TestingPhase.Properties.Resources.download;
             this.btnDownloadFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDownloadFile.Location = new System.Drawing.Point(0, 180);
             this.btnDownloadFile.Name = "btnDownloadFile";
@@ -256,7 +256,7 @@
             this.btnUploadFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUploadFile.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUploadFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.btnUploadFile.Image = global::TestingPhase.Properties.Resources.approved;
+            this.btnUploadFile.Image = global::TestingPhase.Properties.Resources.upload;
             this.btnUploadFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUploadFile.Location = new System.Drawing.Point(0, 120);
             this.btnUploadFile.Name = "btnUploadFile";

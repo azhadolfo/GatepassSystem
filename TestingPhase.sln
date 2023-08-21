@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingPhase", "TestingPhase.csproj", "{CE424A95-C7C9-4C60-82C3-24041A74F3F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DmsLibrary", "DmsLibrary\DmsLibrary.csproj", "{9824C2A2-A2A4-49D0-8F6D-B629D2B9CAA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CE424A95-C7C9-4C60-82C3-24041A74F3F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE424A95-C7C9-4C60-82C3-24041A74F3F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE424A95-C7C9-4C60-82C3-24041A74F3F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9824C2A2-A2A4-49D0-8F6D-B629D2B9CAA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9824C2A2-A2A4-49D0-8F6D-B629D2B9CAA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9824C2A2-A2A4-49D0-8F6D-B629D2B9CAA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9824C2A2-A2A4-49D0-8F6D-B629D2B9CAA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

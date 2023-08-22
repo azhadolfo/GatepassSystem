@@ -284,7 +284,12 @@ namespace TestingPhase
 
             using (NpgsqlConnection conn = new NpgsqlConnection(ConnectionString))
             {
-                string query = "INSERT INTO filedocument (name, department, description, dateuploaded, location, \"user\") VALUES (@name, @department, @description, @dateuploaded, @location, @user)";
+                string query = "INSERT INTO filedocument (name, department, description, dateuploaded, location, \"user\") VALUES (@name, @department, @description, @dateuploaded, @location, @user)"; 
+                /* Enclosing the user must need to make sure that you are calling 
+                 * the column name not 
+                 * the keywords the "user" keyword 
+                 * have a designated values in postgre sql */
+
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@name", filename);

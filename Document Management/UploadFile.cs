@@ -103,7 +103,7 @@ namespace TestingPhase.Document_Management
         {
             txtFileName.Text = string.Empty;
             txtDescription.Text = string.Empty;
-            cboDepartment.Text = string.Empty;
+            cboDepartment.SelectedIndex = 0;
         }
 
         private void txtDescription_TextChanged(object sender, EventArgs e)

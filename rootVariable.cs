@@ -279,22 +279,24 @@ namespace TestingPhase
         //    }
         //}
         #region -- Upload File Function --
-        public void UploadFile(string filename, string department, string description, DateTime dateUploaded, string filelocation, string username)
+        public void UploadFile(string filename, string department, ListBox listBox, DateTime dateUploaded, string filelocation, string username)
         {
-
             using (NpgsqlConnection conn = new NpgsqlConnection(ConnectionString))
             {
-                string query = "INSERT INTO filedocument (name, department, description, dateuploaded, location, \"user\") VALUES (@name, @department, @description, @dateuploaded, @location, @user)"; 
-                /* Enclosing the user must need to make sure that you are calling 
-                 * the column name not 
-                 * the keywords the "user" keyword 
-                 * have a designated values in postgre sql */
+                string query = "INSERT INTO filedocument (name, department, description, dateuploaded, location, \"user\") VALUES (@name, @department, @description, @dateuploaded, @location, @user)";
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@name", filename);
                     cmd.Parameters.AddWithValue("@department", department);
-                    cmd.Parameters.AddWithValue("@description", description);
+
+                    // Combine ListBox items to create the description
+                    string combinedDescription = string.Join(" ", listBox.Items.Cast<string>());
+                    combinedDescription = combinedDescription.Replace(",", ""); // Remove commas
+                    combinedDescription = combinedDescription.Trim(); // Trim whitespace
+
+                    cmd.Parameters.AddWithValue("@description", combinedDescription);
+
                     cmd.Parameters.AddWithValue("@dateuploaded", dateUploaded);
                     cmd.Parameters.AddWithValue("@location", filelocation);
                     cmd.Parameters.AddWithValue("@user", username);
@@ -310,13 +312,13 @@ namespace TestingPhase
                     }
                     catch (Exception ex)
                     {
-
                         MessageBox.Show("An error occurred while uploading the file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-               
             }
         }
+
+
         #endregion
     }
 }

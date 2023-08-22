@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UploadFile));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.label6 = new System.Windows.Forms.Label();
             this.txtFileName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,13 +38,15 @@
             this.txtDescription = new System.Windows.Forms.RichTextBox();
             this.btnSearchFile = new System.Windows.Forms.Button();
             this.btnUpload = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.lbKeyword = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(18, 160);
+            this.label6.Location = new System.Drawing.Point(18, 172);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 33);
             this.label6.TabIndex = 43;
@@ -55,17 +57,17 @@
             this.txtFileName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(22)))), ((int)(((byte)(23)))));
             this.txtFileName.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFileName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.txtFileName.Location = new System.Drawing.Point(136, 13);
+            this.txtFileName.Location = new System.Drawing.Point(24, 49);
             this.txtFileName.Name = "txtFileName";
             this.txtFileName.ReadOnly = true;
-            this.txtFileName.Size = new System.Drawing.Size(389, 36);
+            this.txtFileName.Size = new System.Drawing.Size(487, 36);
             this.txtFileName.TabIndex = 39;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 86);
+            this.label3.Location = new System.Drawing.Point(18, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(121, 33);
             this.label3.TabIndex = 36;
@@ -99,28 +101,31 @@
             "Operation",
             "Retail",
             "Logistic"});
-            this.cboDepartment.Location = new System.Drawing.Point(136, 86);
+            this.cboDepartment.Location = new System.Drawing.Point(24, 127);
             this.cboDepartment.Name = "cboDepartment";
-            this.cboDepartment.Size = new System.Drawing.Size(436, 37);
+            this.cboDepartment.Size = new System.Drawing.Size(533, 37);
             this.cboDepartment.TabIndex = 46;
             // 
             // txtDescription
             // 
             this.txtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(22)))), ((int)(((byte)(23)))));
             this.txtDescription.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
-            this.txtDescription.Location = new System.Drawing.Point(136, 160);
+            this.txtDescription.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.txtDescription.Location = new System.Drawing.Point(24, 231);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(435, 143);
+            this.txtDescription.Size = new System.Drawing.Size(533, 143);
             this.txtDescription.TabIndex = 47;
-            this.txtDescription.Text = "";
+            this.txtDescription.Text = "e.g (voucher, important, retail)";
+            this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
+            this.txtDescription.Enter += new System.EventHandler(this.txtDescription_Enter);
+            this.txtDescription.Leave += new System.EventHandler(this.txtDescription_Leave);
             // 
             // btnSearchFile
             // 
             this.btnSearchFile.FlatAppearance.BorderSize = 0;
             this.btnSearchFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchFile.Image = global::TestingPhase.Properties.Resources.search__1_;
-            this.btnSearchFile.Location = new System.Drawing.Point(531, 14);
+            this.btnSearchFile.Location = new System.Drawing.Point(517, 52);
             this.btnSearchFile.Name = "btnSearchFile";
             this.btnSearchFile.Size = new System.Drawing.Size(40, 35);
             this.btnSearchFile.TabIndex = 45;
@@ -146,11 +151,11 @@
             this.btnUpload.ColorContrastOnClick = 45;
             this.btnUpload.ColorContrastOnHover = 45;
             this.btnUpload.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnUpload.CustomizableEdges = borderEdges1;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.btnUpload.CustomizableEdges = borderEdges7;
             this.btnUpload.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnUpload.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnUpload.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -175,7 +180,7 @@
             this.btnUpload.IdleIconRightImage = global::TestingPhase.Properties.Resources.up_loading;
             this.btnUpload.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnUpload.IndicateFocus = false;
-            this.btnUpload.Location = new System.Drawing.Point(440, 353);
+            this.btnUpload.Location = new System.Drawing.Point(428, 537);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnUpload.OnDisabledState.BorderRadius = 20;
@@ -218,11 +223,34 @@
             this.btnUpload.UseDefaultRadiusAndThickness = true;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
+            // lbKeyword
+            // 
+            this.lbKeyword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbKeyword.FormattingEnabled = true;
+            this.lbKeyword.ItemHeight = 19;
+            this.lbKeyword.Location = new System.Drawing.Point(24, 444);
+            this.lbKeyword.Name = "lbKeyword";
+            this.lbKeyword.Size = new System.Drawing.Size(285, 249);
+            this.lbKeyword.TabIndex = 49;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift SemiLight Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(20, 204);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(537, 23);
+            this.label1.TabIndex = 50;
+            this.label1.Text = "Add Tags or Keyword to describe the file you want to upload. Seperate it by comma" +
+    ".";
+            // 
             // UploadFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(22)))), ((int)(((byte)(23)))));
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbKeyword);
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.cboDepartment);
@@ -235,7 +263,7 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(251)))), ((int)(((byte)(252)))));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UploadFile";
-            this.Size = new System.Drawing.Size(589, 638);
+            this.Size = new System.Drawing.Size(589, 752);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,5 +278,7 @@
         private System.Windows.Forms.ComboBox cboDepartment;
         private System.Windows.Forms.RichTextBox txtDescription;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnUpload;
+        private System.Windows.Forms.ListBox lbKeyword;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DmsLibrary;
+using Npgsql;
 
 
 namespace TestingPhase.Document_Management
@@ -86,7 +87,7 @@ namespace TestingPhase.Document_Management
                         txtFileName.Text,
                         rootv.username);
 
-                    root.UploadFile(fileDocument.Name, fileDocument.Department, fileDocument.Description, fileDocument.DateUploaded, fileDocument.Location, fileDocument.User);
+                    root.UploadFile(fileDocument.Name, fileDocument.Department, lbKeyword, fileDocument.DateUploaded, fileDocument.Location, fileDocument.User);
 
                     ClearFields();                 
                 }
@@ -103,6 +104,39 @@ namespace TestingPhase.Document_Management
             txtFileName.Text = string.Empty;
             txtDescription.Text = string.Empty;
             cboDepartment.Text = string.Empty;
+        }
+
+        private void txtDescription_TextChanged(object sender, EventArgs e)
+        {
+            // Clear the existing items in the ListBox
+            lbKeyword.Items.Clear();
+
+            // Split the text based on commas
+            char[] separators = { ',' };
+            string[] words = txtDescription.Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+
+            // Add each word as a keyword/tag to the ListBox
+            foreach (string word in words)
+            {
+                lbKeyword.Items.Add(word.Trim()); // Trim to remove extra spaces around each word
+            }
+        }
+
+        private void txtDescription_Enter(object sender, EventArgs e)
+        {
+            if (txtDescription.Text == "e.g (voucher, important, retail)")
+            {
+                txtDescription.Text = "";
+                txtDescription.ForeColor = Color.FromArgb(227, 251, 252); // Use the correct color values
+            }
+        }
+
+        private void txtDescription_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtDescription.Text))
+            {
+                txtDescription.Text = null;
+            }
         }
     }
 }

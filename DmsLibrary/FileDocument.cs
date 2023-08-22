@@ -8,17 +8,21 @@ namespace DmsLibrary
 {
     public class FileDocument
     {
-        public string FileName { get; set; }
+        public string Name { get; set; }
         public string Department { get; set; }
         public string Description { get; set; }
         public DateTime DateUploaded { get; set; }
+        public string Location { get; set; }
+        public string User { get; set; }
 
-        public FileDocument(string filename, string department, string description, DateTime dateUploaded)
+        public FileDocument(string filename, string department, string description, DateTime dateUploaded, string filelocation, string username)
         {
-            this.FileName = filename;
+            this.Name = filename;
             this.Department = department;
             this.Description = description;
-            DateUploaded = dateUploaded;
+            this.DateUploaded = dateUploaded;
+            this.Location = filelocation;
+            this.User = username;
         }
     }
 

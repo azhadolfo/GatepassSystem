@@ -278,6 +278,40 @@ namespace TestingPhase
         //        }
         //    }
         //}
+        #region -- Upload File Function --
+        public void UploadFile(string filename, string department, string description, DateTime dateUploaded, string filelocation, string username)
+        {
 
+            using (NpgsqlConnection conn = new NpgsqlConnection(ConnectionString))
+            {
+                string query = "INSERT INTO filedocument (name, department, description, dateuploaded, location, \"user\") VALUES (@name, @department, @description, @dateuploaded, @location, @user)";
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@name", filename);
+                    cmd.Parameters.AddWithValue("@department", department);
+                    cmd.Parameters.AddWithValue("@description", description);
+                    cmd.Parameters.AddWithValue("@dateuploaded", dateUploaded);
+                    cmd.Parameters.AddWithValue("@location", filelocation);
+                    cmd.Parameters.AddWithValue("@user", username);
+
+                    try
+                    {
+                        conn.Open();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("File uploaded and saved successfully", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show("An error occurred while uploading the file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+               
+            }
+        }
+        #endregion
     }
 }

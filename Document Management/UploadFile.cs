@@ -16,9 +16,11 @@ namespace TestingPhase.Document_Management
     public partial class UploadFile : UserControl
     {
         private FileDocument fileDocument;
+        private rootv root;
         public UploadFile()
         {
             InitializeComponent();
+            root = new rootv();
         }
 
         // Declare a string to store the selected file name
@@ -68,7 +70,7 @@ namespace TestingPhase.Document_Management
 
                 // Construct the destination file path
                 string destinationFolderPath = @"C:\Users\FILPRIDE\Desktop\Azh Folder"; // Destination folder path
-                string destinationFilePath = Path.Combine(destinationFolderPath, customizedFileName);
+                string destinationFilePath = Path.Combine(destinationFolderPath, customizedFileName);              
 
                 try
                 {
@@ -76,11 +78,17 @@ namespace TestingPhase.Document_Management
                     File.Copy(selectedFilePath, destinationFilePath);
 
                     // Now you can use the fileDocument object as needed
-                    fileDocument = new FileDocument(txtFileName.Text, cboDepartment.Text, txtDescription.Text, DateTime.Now);
+                    fileDocument = new FileDocument(
+                        Path.GetFileName(selectedFilePath),
+                        cboDepartment.Text,
+                        txtDescription.Text,
+                        DateTime.Now, 
+                        txtFileName.Text,
+                        rootv.username);
 
-                    ClearFields();
+                    root.UploadFile(fileDocument.Name, fileDocument.Department, fileDocument.Description, fileDocument.DateUploaded, fileDocument.Location, fileDocument.User);
 
-                    MessageBox.Show("File uploaded and saved successfully", "System Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearFields();                 
                 }
                 catch (IOException ex)
                 {
